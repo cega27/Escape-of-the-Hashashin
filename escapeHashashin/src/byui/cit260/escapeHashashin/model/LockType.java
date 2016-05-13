@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Garen
  */
-public class LockType implements Serializable {
+public class LockType extends Scene implements Serializable {
 
     public LockType() {
     }
@@ -44,7 +44,7 @@ public class LockType implements Serializable {
 
     @Override
     public String toString() {
-        return "LockType{" + "itemUsed=" + itemUsed + '}';
+        return "LockType{" + super.toString() + "itemUsed=" + itemUsed + '}';
     }
     
     

@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author carlos
  */
-public class PuzzleType implements Serializable{
+public class PuzzleType extends Scene implements Serializable{
     
     private double math;
 
@@ -35,7 +35,7 @@ public class PuzzleType implements Serializable{
 
     @Override
     public String toString() {
-        return "PuzzleType{" + "math=" + math + '}';
+        return "PuzzleType{" + super.toString() + "math=" + math + '}';
     }
 
     @Override

@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author carlos
  */
-public class DiscoveryType implements Serializable{
+public class DiscoveryType extends Scene implements Serializable{
     
     private String itemType;
 
@@ -36,7 +36,7 @@ public class DiscoveryType implements Serializable{
 
     @Override
     public String toString() {
-        return "DiscoveryType{" + "itemType=" + itemType + '}';
+        return "DiscoveryType{" + super.toString() + "itemType=" + itemType + '}';
     }
 
     @Override
