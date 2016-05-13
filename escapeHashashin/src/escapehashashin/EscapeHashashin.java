@@ -9,9 +9,14 @@ import byui.cit260.escapeHashashin.model.Conversation;
 import byui.cit260.escapeHashashin.model.Player;
 import byui.cit260.escapeHashashin.model.Character;
 import byui.cit260.escapeHashashin.model.ConversationType;
+import byui.cit260.escapeHashashin.model.DiscoveryType;
 import byui.cit260.escapeHashashin.model.Game;
 import byui.cit260.escapeHashashin.model.Item;
+import byui.cit260.escapeHashashin.model.Location;
 import byui.cit260.escapeHashashin.model.LockType;
+import byui.cit260.escapeHashashin.model.Map;
+import byui.cit260.escapeHashashin.model.PuzzleType;
+import byui.cit260.escapeHashashin.model.Scene;
 
 /**
  *
@@ -71,6 +76,42 @@ public class EscapeHashashin {
         
         String lockItemUsed = lockTypeOne.toString();
         System.out.println(lockItemUsed);
+        
+        Map mapOne = new Map();
+        mapOne.setRowCount(6);
+        mapOne.setColumnCount(6);
+        
+        String columnRowCount = mapOne.toString();
+        System.out.println(columnRowCount);
+        
+        Location locationOne = new Location();
+        locationOne.setRow(6);
+        locationOne.setColumn(7);
+        locationOne.setVisited("Location has been Visited");
+        
+        String rowColumnVi = locationOne.toString();
+        System.out.println(rowColumnVi);
+        
+        Scene sceneOne = new Scene();
+        sceneOne.setDescription("Description goes here");
+        sceneOne.setBlockedLocation("Blocked Location");
+        sceneOne.setDisplaySymbol("Symbol");
+        sceneOne.setHint("Hint or clue");
+        
+        String sceneAtributes = sceneOne.toString();
+        System.out.println(sceneAtributes);
+        
+        DiscoveryType discoveryTypeOne = new DiscoveryType();
+        discoveryTypeOne.setItemType("Description of the item");
+        
+        String itemT = discoveryTypeOne.toString();
+        System.out.println(itemT);
+        
+        PuzzleType puzzleOne = new PuzzleType();
+        puzzleOne.setMath(10);
+        
+        String mathProblem = puzzleOne.toString();
+        System.out.println(mathProblem);
         
     }
     
