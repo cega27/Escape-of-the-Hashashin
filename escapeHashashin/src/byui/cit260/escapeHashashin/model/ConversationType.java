@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author Garen
  */
-public class ConversationType implements Serializable {
+public class ConversationType extends Conversation implements Serializable {
 
     public ConversationType(String information) {
         this.information = information;
@@ -50,7 +50,7 @@ public class ConversationType implements Serializable {
 
     @Override
     public String toString() {
-        return "ConversationType{" + "information=" + information + '}';
+        return "ConversationType{" + super.toString() + "information=" + information + '}';
     }
     
     
