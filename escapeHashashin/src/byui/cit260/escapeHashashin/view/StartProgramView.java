@@ -11,9 +11,9 @@ package byui.cit260.escapeHashashin.view;
  */
 public class StartProgramView {
     
-        private String promptMessage;
+    private String promptMessage;
     
-        public StartProgramView() {
+    public StartProgramView() {
          // promptMessage = "please enter your name"
          // display the banner when view is created
          this.promptMessage = "\nPlease enter your name";
