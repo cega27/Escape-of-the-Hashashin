@@ -15,9 +15,9 @@ import java.util.Scanner;
  */
 public class StartProgramView {
     
-        private String promptMessage;
+    private String promptMessage;
     
-        public StartProgramView() {
+    public StartProgramView() {
          // promptMessage = "please enter your name"
          // display the banner when view is created
          this.promptMessage = "\nPlease enter your name";
@@ -85,12 +85,6 @@ public class StartProgramView {
        }
        return value; //return the value entered
     }
-    
-        
-    
-
-    
-
 
         private boolean doAction(String playersName) {
         
@@ -107,8 +101,7 @@ public class StartProgramView {
         System.out.println("Error creating the player.");
         return false;
     }
-        
-
+        this.displayNextView(player);
 
         /*
         if the length of the playersName < 2 then 
@@ -119,13 +112,26 @@ public class StartProgramView {
         if unsuccessful then display "Invalid name: The name is too short"
         return false
         
-        display customized welcome message
+      //  display customized welcome message
+     
         display mainMenuView
         return true
 */
         
-       return true;
+        return true;
         }
+
+    private void displayNextView(Player player) {
+        System.out.println("\n==================================="
+                            + "\n Welcome to the game " + player.getName()
+                            + "\n We hope you have a lot of fun!"
+                            + "\n=================================="
+                            );
+        
+        MainMenuView mainMenuView = new MainMenuView();
+            
+        mainMenuView.displayMainMenuView();
+    }
 }
 
          //END

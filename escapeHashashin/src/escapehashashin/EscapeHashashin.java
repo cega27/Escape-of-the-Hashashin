@@ -25,7 +25,8 @@ import byui.cit260.escapeHashashin.view.StartProgramView;
  */
 public class EscapeHashashin {
 
-    
+    private static Game currentGame = null;
+    private static Player player = null;
     
     public static void main(String[] args) {
         
@@ -33,15 +34,22 @@ public class EscapeHashashin {
         startProgramView.displayStartProgramView();
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    }
+
+    public static void setPlayer(Player player) {
+        EscapeHashashin.player = player;
+    }
+    
+    public static Player getPlayer(){
+        return player;
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        EscapeHashashin.currentGame = currentGame;
     }
     
     

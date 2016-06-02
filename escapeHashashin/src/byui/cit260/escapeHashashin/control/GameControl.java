@@ -6,6 +6,7 @@
 package byui.cit260.escapeHashashin.control;
 
 import byui.cit260.escapeHashashin.model.Player;
+import escapehashashin.EscapeHashashin;
 
 /**
  *
@@ -14,8 +15,15 @@ import byui.cit260.escapeHashashin.model.Player;
 public class GameControl {
 
     public static Player createPlayer(String playersName) {
-        System.out.println("\n createPlayer() function called");
-        return new Player();
+        if (playersName == null){
+            return null;
+        }
+     Player player = new Player();
+     player.setName(playersName);
+     
+     EscapeHashashin.setPlayer(player);
+     
+     return player;
     }
     
 }
