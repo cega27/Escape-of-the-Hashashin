@@ -17,6 +17,7 @@ import byui.cit260.escapeHashashin.model.LockType;
 import byui.cit260.escapeHashashin.model.Map;
 import byui.cit260.escapeHashashin.model.PuzzleType;
 import byui.cit260.escapeHashashin.model.Scene;
+import byui.cit260.escapeHashashin.view.StartProgramView;
 
 /**
  *
@@ -27,6 +28,10 @@ public class EscapeHashashin {
     
     
     public static void main(String[] args) {
+        
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
+        
         
         Player playerOne = new Player();
         playerOne.setName("Tiny Tim");
