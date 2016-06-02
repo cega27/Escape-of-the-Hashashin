@@ -107,6 +107,7 @@ public class StartProgramView {
         System.out.println("Error creating the player.");
         return false;
     }
+        
 
 
         /*
@@ -123,7 +124,7 @@ public class StartProgramView {
         return true
 */
         
-        return true; //FIX ME. WHAT SHOULD I RETURN?!
+       return true;
         }
 }
 
