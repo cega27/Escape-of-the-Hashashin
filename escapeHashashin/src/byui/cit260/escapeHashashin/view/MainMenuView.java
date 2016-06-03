@@ -5,7 +5,10 @@
  */
 package byui.cit260.escapeHashashin.view;
 
+import byui.cit260.escapeHashashin.control.GameControl;
+import escapehashashin.EscapeHashashin;
 import java.util.Scanner;
+import byui.cit260.escapeHashashin.view.GameMenuView;
 
 /**
  *
@@ -94,7 +97,19 @@ public class MainMenuView{
     }
 
     private void startNewGame() {
-        System.out.println("startNewGame function called");
+        
+        GameControl.createNewGame(EscapeHashashin.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
+        /*
+        BEGIN
+            create a new game
+        
+            create a new game menu view
+            display the game menu
+        END
+        */
     }
 
     private void startExistingGame() {
