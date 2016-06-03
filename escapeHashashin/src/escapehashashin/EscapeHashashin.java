@@ -51,6 +51,8 @@ public class EscapeHashashin {
     public static void setCurrentGame(Game currentGame) {
         EscapeHashashin.currentGame = currentGame;
     }
+
+    
     
     
 }

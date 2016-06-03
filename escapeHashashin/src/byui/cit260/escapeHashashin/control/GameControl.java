@@ -5,6 +5,7 @@
  */
 package byui.cit260.escapeHashashin.control;
 
+import byui.cit260.escapeHashashin.model.Game;
 import byui.cit260.escapeHashashin.model.Player;
 import escapehashashin.EscapeHashashin;
 
@@ -32,6 +33,14 @@ public class GameControl {
         
                 System.out.println("\ncreateNewGame stub function called");
         }
+
+    public static void startExistingGame(Game currentGame) {
+        
+    }
+
+    public static void saveGame(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         
     }
 

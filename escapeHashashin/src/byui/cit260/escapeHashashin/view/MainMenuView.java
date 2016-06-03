@@ -20,9 +20,8 @@ public class MainMenuView{
     private String promptMessage;
     private String menu;
    public MainMenuView() {
-       this.promptMessage = "Please enter the Letter";
-       this.menu ="\n"
-            +"\n -----------------------------"
+       this.promptMessage = 
+            "\n -----------------------------"
             +"\n| Main Menu                   "
             +"\n -----------------------------"
             +"\nN - Start new game"
@@ -30,8 +29,9 @@ public class MainMenuView{
             +"\nH - Get help on how to play the game"
             +"\nS - Save game"
             +"\nQ - Quit"
-            +"\n -----------------------------";
-            
+            +"\n -----------------------------"
+            + "\nPlease enter the Letter";
+         
     
    }
     
@@ -113,7 +113,7 @@ public class MainMenuView{
     }
 
     private void startExistingGame() {
-        System.out.println("startExistingGame function called");
+      System.out.println("startExistingGame() function called");
     }
 
     private void displayHelpMenu() {
@@ -121,7 +121,9 @@ public class MainMenuView{
     }
 
     private void saveGame() {
-     System.out.println("startSaveGame function called");
+       System.out.println("saveGame() function called");
+        
+
     }
 
    
