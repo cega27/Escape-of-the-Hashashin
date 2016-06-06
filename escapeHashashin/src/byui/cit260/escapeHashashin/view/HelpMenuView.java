@@ -33,7 +33,7 @@ public class HelpMenuView {
    }
     
 
-    public void displayMainMenuView() {
+    public void displayHelpMenuView() {
         
         boolean done = false;
         do {
