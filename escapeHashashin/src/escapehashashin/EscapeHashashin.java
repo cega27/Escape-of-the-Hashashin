@@ -17,6 +17,8 @@ import byui.cit260.escapeHashashin.model.LockType;
 import byui.cit260.escapeHashashin.model.Map;
 import byui.cit260.escapeHashashin.model.PuzzleType;
 import byui.cit260.escapeHashashin.model.Scene;
+import byui.cit260.escapeHashashin.view.GameMenuView;
+import byui.cit260.escapeHashashin.view.HelpMenuView;
 import byui.cit260.escapeHashashin.view.StartProgramView;
 
 /**
@@ -33,6 +35,11 @@ public class EscapeHashashin {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
         
+        HelpMenuView helpMenuView = new HelpMenuView();
+        helpMenuView.displayHelpMenuView();
+        
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayGameMenuView();
         
     }
 
