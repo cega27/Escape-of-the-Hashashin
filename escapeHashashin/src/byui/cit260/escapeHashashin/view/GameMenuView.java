@@ -40,7 +40,7 @@ public class GameMenuView {
     
    }
    
-   public void displayGameMenuView() {
+   public void displayMenu() {
         
         boolean done = false;
         do {
@@ -78,9 +78,7 @@ public class GameMenuView {
     }
     
     
-    void displayMenu() {
-        System.out.println("\ndisplayMenu called");
-    }
+    
 
 
     private boolean doAction(String choice) {
@@ -128,7 +126,7 @@ public class GameMenuView {
                 System.out.println("\nInvalid selection. Try again");
                 break;
         }
-        return false;
+        return true;
     
     
     }
@@ -179,5 +177,9 @@ public class GameMenuView {
 
     private void keyInventory() {
         System.out.println("\nkeyInventory() function called");
+    }
+
+    public void displayGameMenuView() {
+        System.out.println("\ndisplayGameMenuView");
     }
 }

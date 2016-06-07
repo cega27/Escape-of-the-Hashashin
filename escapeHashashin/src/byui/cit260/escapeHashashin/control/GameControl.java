@@ -35,12 +35,13 @@ public class GameControl {
         }
 
     public static void startExistingGame(Game currentGame) {
-        
+        System.out.println("\nstartExistingGame() called");
     }
 
     public static void saveGame(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\nsaveGame() called");
     }
+    
         
     }
 
