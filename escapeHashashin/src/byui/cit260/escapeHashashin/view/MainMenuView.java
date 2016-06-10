@@ -6,6 +6,7 @@
 package byui.cit260.escapeHashashin.view;
 
 import byui.cit260.escapeHashashin.control.GameControl;
+import byui.cit260.escapeHashashin.control.HelpControl;
 import escapehashashin.EscapeHashashin;
 import java.util.Scanner;
 import byui.cit260.escapeHashashin.view.GameMenuView;
@@ -117,7 +118,10 @@ public class MainMenuView{
     }
 
     private void displayHelpMenu() {
-        System.out.println("displayHelpMenu function called");
+  //      HelpControl.displayHelp(EscapeHashashin.getHelp());
+        
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.displayHelpMenuView();
     }
 
     private void saveGame() {

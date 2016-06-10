@@ -33,7 +33,7 @@ public class HelpMenuView {
    }
     
 
-    public void displayMainMenuView() {
+    public void displayHelpMenuView() {
         
         boolean done = false;
         do {
@@ -91,15 +91,17 @@ public class HelpMenuView {
     }
 
     private void goalOfGame() {
-       System.out.println("/ngoaGame was called");
+       System.out.println("\ngoalOfGame() called");
     }
 
     private void howToMove() {
-        System.out.println("/nhowToMove was called");
+        System.out.println("\nhowToMove() called");
     }
 
     private void complexPuzzles() {
-        System.out.println("/ncomplexPuzzles was called");
+        System.out.println("\ncomplexPuzzles() called");
     } 
+
+    
     
 }
