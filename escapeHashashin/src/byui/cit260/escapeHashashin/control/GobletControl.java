@@ -11,7 +11,7 @@ package byui.cit260.escapeHashashin.control;
  */
 public class GobletControl {
     
-    public String calcGobletMath(double userNumber, double userAnswer){
+    public static String calcGobletMath(double userNumber, double userAnswer){
     
         if(userNumber < 2 || userAnswer > userNumber || userNumber > 10)
             return "Error";
