@@ -5,6 +5,7 @@
  */
 package byui.cit260.escapeHashashin.view;
 
+import byui.cit260.escapeHashashin.control.GameControl;
 import java.util.Scanner;
 
 /**
@@ -18,11 +19,12 @@ public class ConversationMenuView {
     public ConversationMenuView() {
        this.promptMessage = 
              "\n ------------------------------"
-            +"\n| Conversation Menu                  |"
+            +"\n| Conversation Menu           |"
             +"\n ------------------------------"
             +"\nF - Response #1"
             +"\nS - Response #2"
             +"\nT - Response #3"
+            +"\nQ - Exit Conversation"  
             +"\n -----------------------------"
             + "\nPlease enter the Letter";
          
@@ -72,13 +74,13 @@ public class ConversationMenuView {
         
         switch (choice) {
             case "F": //create and start a new game
-                this.firstResponse();
+                this.displayResponse(choice);
                 break;
             case "S": //get and start an existing game
-                this.secondResponse();
+                this.displayResponse(choice);
                 break;
             case "T": // display the help menu
-                this.thirdResponse();
+                this.displayResponse(choice);
                 break; 
             default:  
                 System.out.println("\nInvalid selection. Try again");
@@ -87,16 +89,8 @@ public class ConversationMenuView {
         return false;
     }
     
-    private void firstResponse() {
-        System.out.println("/nfirstResponse was called");
-    }
-
-    private void secondResponse() {
-        System.out.println("/nsecondResponse was called");
-    }
-
-    private void thirdResponse() {
-        System.out.println("/nthirdtResponse was called");
-    }
-    
+    private void displayResponse(String responseNo) {
+        String message = GameControl.getResponse(responseNo);
+        System.out.println("\n" + message);
+    }    
 }
