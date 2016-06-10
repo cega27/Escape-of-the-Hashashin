@@ -29,6 +29,7 @@ public class MainMenuView{
             +"\nG - Get and start saved game"
             +"\nH - Get help on how to play the game"
             +"\nS - Save game"
+            + "\nV - Goblet"
             +"\nQ - Quit"
             +"\n -----------------------------"
             + "\nPlease enter the Letter";
@@ -90,6 +91,9 @@ public class MainMenuView{
             case "S": //save the current game
                 this.saveGame();
                 break;
+            case "V": // display goblet problem
+                this.gobletMath();
+                break;
             default:  
                 System.out.println("\nInvalid selection. Try again");
                 break;
@@ -128,6 +132,11 @@ public class MainMenuView{
        System.out.println("saveGame() function called");
         
 
+    }
+
+    private void gobletMath() {
+        GobletView gobletView = new GobletView();
+        gobletView.displayGobletView();
     }
 
    
