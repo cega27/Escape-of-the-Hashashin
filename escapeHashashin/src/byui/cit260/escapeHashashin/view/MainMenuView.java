@@ -29,8 +29,8 @@ public class MainMenuView{
             +"\nG - Get and start saved game"
             +"\nH - Get help on how to play the game"
             +"\nS - Save game"
-            + "\nV - Goblet"
-            + "\nC - Lock"
+            +"\nV - Goblet"
+            +"\nL - Lock"
             +"\nQ - Quit"
             +"\n -----------------------------"
             + "\nPlease enter the Letter";
@@ -95,6 +95,9 @@ public class MainMenuView{
             case "V": // display goblet problem
                 this.gobletMath();
                 break;
+            case "L": // display goblet problem
+                this.lockMath();
+                break;
             default:  
                 System.out.println("\nInvalid selection. Try again");
                 break;
@@ -139,6 +142,10 @@ public class MainMenuView{
         GobletView gobletView = new GobletView();
         gobletView.displayGobletView();
     }
+    private void lockMath() {
+        LockControlView lockControlView = new LockControlView();
+        lockControlView.displayLockControlView();
 
-
+   }
+    
 }
