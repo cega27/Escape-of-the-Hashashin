@@ -7,6 +7,12 @@ package byui.cit260.escapeHashashin.view;
 
 import java.util.Scanner;
 
+import byui.cit260.escapeHashashin.control.LockControl;
+import byui.cit260.escapeHashashin.control.HelpControl;
+import escapehashashin.EscapeHashashin;
+import java.util.Scanner;
+import byui.cit260.escapeHashashin.view.GameMenuView;
+
 /**
  *
  * @author carlos
@@ -17,6 +23,7 @@ public class LockControlView {
     private String promptResist;
     private String promptPower;
     private String promptMessage;
+    
 
     public LockControlView() {
       
@@ -27,6 +34,7 @@ public class LockControlView {
                 + "selected. Use the following formula to solve the problem: P = V^2/R\n"
                 + "If your formula is correct you will be able to open the door. GOOD LUCK!!!!\n");
 
+        
         this.promptVolt
                 = "\n ----------------------------------"
                 + "\n| Use a number from 10 to 20       |"
@@ -46,7 +54,7 @@ public class LockControlView {
 
         this.promptMessage = this.promptVolt;
     }
-     public void displayHelpMenuView() {
+     public void displayLockControlView() {
 
         boolean done = false;
         do {
@@ -97,5 +105,10 @@ public class LockControlView {
         double Answer = Double.parseDouble(getPower);
        
         return true;
-    }    
+    }   
+    
+    private void locktMath() {
+        LockControl lockControl = new LockControl();
+        lockControl.computeAnswer();
+    }
 }

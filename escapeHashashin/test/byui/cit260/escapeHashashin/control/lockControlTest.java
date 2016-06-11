@@ -26,7 +26,7 @@ public class lockControlTest {
         double voltage = 10.0;
         double resistance = 4.0;
         double uAnswer = 25;
-        lockControl instance = new lockControl();
+        LockControl instance = new LockControl();
         String expResult = "Correct";
         String result = instance.computeAnswer(voltage, resistance, uAnswer);
         assertEquals(expResult, result);

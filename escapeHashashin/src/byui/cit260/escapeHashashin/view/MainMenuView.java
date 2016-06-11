@@ -30,6 +30,7 @@ public class MainMenuView{
             +"\nH - Get help on how to play the game"
             +"\nS - Save game"
             + "\nV - Goblet"
+            + "\nC - Lock"
             +"\nQ - Quit"
             +"\n -----------------------------"
             + "\nPlease enter the Letter";
@@ -139,6 +140,5 @@ public class MainMenuView{
         gobletView.displayGobletView();
     }
 
-   
-    
+
 }
