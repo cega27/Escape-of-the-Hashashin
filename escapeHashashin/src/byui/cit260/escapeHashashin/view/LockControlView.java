@@ -46,7 +46,22 @@ public class LockControlView {
 
         this.promptMessage = this.promptVolt;
     }
-    private String getUserValue() {
+     public void displayHelpMenuView() {
+
+        boolean done = false;
+        do {
+            //prompt for and get players name
+            String getInput = this.getInput();
+            if (getInput.toUpperCase().equals("Q")) {
+                return; // exit the game
+            }
+            //do the requested action and display the next view
+            done = this.doAction(getInput);
+
+        } while (!done);
+    }
+     
+    private String getInput() {
        Scanner keyboard = new Scanner (System.in); // get infile for keyboard
        String value = ""; // value to be returned
        boolean valid = false; // initialize to not valid
@@ -65,5 +80,22 @@ public class LockControlView {
            break; //end loop
        }
        return value; //return the value entered
-    }
+    } 
+    
+    private boolean doAction(String volt) {
+         //Get their userAnswer
+        double voltage = Double.parseDouble(volt);
+        
+        this.promptMessage = this.promptResist;
+        String getResist = this.getInput();
+        
+        double resistance = Double.parseDouble(getResist);
+        
+        this.promptMessage = this.promptPower;
+
+        String getPower = this.getInput();
+        double Answer = Double.parseDouble(getPower);
+       
+        return true;
+    }    
 }
