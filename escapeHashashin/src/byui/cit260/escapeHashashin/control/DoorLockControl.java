@@ -18,9 +18,9 @@ public class DoorLockControl {
         else{    
             double voltageP = Math.pow(voltage,2);
             double power = (voltageP/resistance);
-            double powerD = Math.round(power *100)/100.0;
+            double cAnswer = Math.round(power *100)/100.0;
       
-                if (powerD != uAnswer){
+                if (cAnswer != uAnswer){
                     return "Incorrect";
                 }
                 else {
