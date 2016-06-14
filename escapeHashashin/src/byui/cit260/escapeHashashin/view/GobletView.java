@@ -71,9 +71,7 @@ public class GobletView {
             System.out.println("\nInvalid value: value can not be less than 2");
 
         }
-        
-        
-        
+
         return value; //return the value entered
     }
 
@@ -99,9 +97,6 @@ public class GobletView {
         //   return "Correct";
         //else if {
         //  return "Incorrect"
-        
-       
-        
         return true;
 
     }
