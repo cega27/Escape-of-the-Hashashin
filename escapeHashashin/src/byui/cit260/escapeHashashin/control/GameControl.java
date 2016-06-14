@@ -27,6 +27,11 @@ public class GameControl {
      return player;
     }
     
+    public static String getResponse(String responseNo) {
+        System.out.println("\n *** getResponse() called ***");
+        return "";
+    }
+    
    
         
         public static void createNewGame(Player player) {

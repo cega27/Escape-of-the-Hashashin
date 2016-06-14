@@ -86,7 +86,7 @@ public class GobletView {
             return true; // exit the game}
 
         }
-        double uAnswer = Double.parseDouble(getAnswer);;
+        double uAnswer = Double.parseDouble(getAnswer);
 
         //Call control function to compare the correct answer with their answer
         GobletControl.calcGobletMath(0, uAnswer);
