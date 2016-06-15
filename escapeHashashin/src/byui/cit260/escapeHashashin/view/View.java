@@ -40,7 +40,7 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
        Scanner keyboard = new Scanner (System.in); // get infile for keyboard
-       String value = null; // value to be returned
+       String value = ""; // value to be returned
        boolean valid = false; // initialize to not valid
        
        while (!valid) { //loop while an invlid value is entered
