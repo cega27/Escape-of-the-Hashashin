@@ -37,7 +37,7 @@ public class EscapeHashashin {
         startProgramView.display();
         
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
         
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayGameMenuView();

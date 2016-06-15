@@ -92,7 +92,7 @@ public class MainMenuView extends View{
   //      HelpControl.displayHelp(EscapeHashashin.getHelp());
         
         HelpMenuView helpMenu = new HelpMenuView();
-        helpMenu.displayHelpMenuView();
+        helpMenu.display();
     }
 
     private void saveGame() {
