@@ -65,7 +65,7 @@ public class StartProgramView {
        
         }
 
-       private String getPlayersName() {
+       private String getInput() {
            
        Scanner keyboard = new Scanner (System.in); // get infile for keyboard
        String value = ""; // value to be returned
@@ -130,7 +130,7 @@ public class StartProgramView {
         
         MainMenuView mainMenuView = new MainMenuView();
             
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
     }
 }
 

@@ -70,8 +70,9 @@ public class GobletView {
         if (value.length() < 0) { // value is blank
             System.out.println("\nInvalid value: value can not be less than 2");
 
+            double uNumber = Double.parseDouble(value);
         }
-
+        
         return value; //return the value entered
     }
 
