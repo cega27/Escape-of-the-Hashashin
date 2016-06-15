@@ -18,10 +18,9 @@ import byui.cit260.escapeHashashin.view.GameMenuView;
 public class MainMenuView extends View{
 
     
-    private String promptMessage;
-    private String menu;
-   public MainMenuView() {
-       super("\n -----------------------------"
+    public MainMenuView() {
+        
+        super(    "\n -----------------------------"
             +"\n| Main Menu                   "
             +"\n -----------------------------"
             +"\nN - Start new game"
@@ -32,14 +31,14 @@ public class MainMenuView extends View{
             +"\nL - Lock"
             +"\nQ - Quit"
             +"\n -----------------------------"
-            + "\nPlease enter the Letter";)
+            + "\nPlease enter the Letter");
          
-       
+    
    }
     
 
-   
-    private boolean doAction(String value) {
+   @Override
+    public boolean doAction(String value) {
         
         value = value.toUpperCase(); //convert choice to upper case
         
