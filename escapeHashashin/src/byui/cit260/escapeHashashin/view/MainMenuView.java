@@ -73,12 +73,13 @@ public class MainMenuView extends View{
         GameControl.createNewGame(EscapeHashashin.getPlayer());
         
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
         /*
         BEGIN
             create a new game
         
-            create a new game menu view
+            create a new game menu viewhh
+        
             display the game menu
         END
         */
@@ -103,7 +104,7 @@ public class MainMenuView extends View{
 
     private void gobletMath() {
         GobletView gobletView = new GobletView();
-        gobletView.displayGobletView();
+        gobletView.display();
     }
     private void lockMath() {
         LockControlView lockControlView = new LockControlView();
