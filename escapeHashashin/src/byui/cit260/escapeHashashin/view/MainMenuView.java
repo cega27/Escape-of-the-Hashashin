@@ -107,7 +107,7 @@ public class MainMenuView extends View{
     }
     private void lockMath() {
         LockControlView lockControlView = new LockControlView();
-        lockControlView.displayLockControlView();
+        lockControlView.display();
 
    }
     

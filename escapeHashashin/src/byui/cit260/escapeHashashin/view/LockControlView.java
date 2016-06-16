@@ -16,7 +16,7 @@ import byui.cit260.escapeHashashin.view.GameMenuView;
  *
  * @author carlos
  */
-public class LockControlView {
+public class LockControlView extends View {
 
     private String promptVolt;
     private String promptResist;
@@ -53,43 +53,9 @@ public class LockControlView {
 
         this.promptMessage = this.promptVolt;
     }
-     public void displayLockControlView() {
 
-        boolean done = false;
-        do {
-            //prompt for and get players name
-            String getInput = this.getInput();
-            if (getInput.toUpperCase().equals("Q")) {
-                return; // exit the game
-            }
-            //do the requested action and display the next view
-            done = this.doAction(getInput);
-
-        } while (!done);
-    }
-     
-    private String getInput() {
-       Scanner keyboard = new Scanner (System.in); // get infile for keyboard
-       String value = ""; // value to be returned
-       boolean valid = false; // initialize to not valid
-       
-       while (!valid) { //loop while an invlid value is entered
-           System.out.println("\n" + this.promptMessage);
-           
-           value = keyboard.nextLine(); // get next line typed on keyboard
-           value = value.trim(); //trim off leading and trailing blanks
-         
-         
-           if (value.length() < 0) { // value is blank
-               System.out.println("\nInvalid value: value can not be blank");
-               continue;
-           }
-           break; //end loop
-       }
-       return value; //return the value entered
-    } 
-    
-    private boolean doAction(String volt) {
+    @Override
+    public boolean doAction(String volt) {
          //Get their userAnswer
         double voltage = Double.parseDouble(volt);
         
