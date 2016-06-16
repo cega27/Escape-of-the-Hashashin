@@ -22,20 +22,16 @@ public class GobletView extends View {
         // display the banner when view is created
         //this.promptMessage = "\nPlease enter your name";
         //display the banner when view is created
-        this.displayBanner();
-    }
-    private String promptMessage;
-    private void displayBanner() {
-        this.promptMessage = "\nAn assortment of Goblets lay before you. To ensure the safety"
+        super("\nAn assortment of Goblets lay before you. To ensure the safety"
                 + "\nof the royal goblet, they have crafted many others that look just like it."
                 + "\nYou have gained the knowledge of the secret formula to identify the correct"
                 + "\ngoblet. You must pick any number of your choosing that is between 2-10. Take"
                 + "\nthis number and find your number to the power of 5. You must then find the log"
                 + "\nbased 10 of that number. Your correct answer will show the true goblet"
-                + "\nEnter your desired number.";
+                + "\nEnter your desired number.");
     }
 
-    
+    private String promptMessage;
 
     public boolean doAction(String userNumber) {
 
