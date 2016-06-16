@@ -15,12 +15,9 @@ import java.util.Scanner;
  */
 public class StartProgramView extends View {
     
-    private String promptMessage;
+    public StartProgramView(){
     
-    public StartProgramView() {
-         // promptMessage = "please enter your name"
-         // display the banner when view is created
-         this.promptMessage = "\nPlease enter your name";
+   super( "\nPlease enter your name");
          //display the banner when view is created
          this.displayBanner();
         }

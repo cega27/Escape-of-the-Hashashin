@@ -43,7 +43,7 @@ public class EscapeHashashin {
         gameMenuView.displayGameMenuView();
         
         GobletView gobletView = new GobletView();
-        gobletView.displayGobletView();
+        gobletView.display();
         
     }
 
