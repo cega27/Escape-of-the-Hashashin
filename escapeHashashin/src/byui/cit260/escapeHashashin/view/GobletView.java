@@ -15,8 +15,6 @@ import java.util.Scanner;
  */
 public class GobletView extends View {
 
-    
-
     public GobletView() {
         // promptMessage = "please enter your name"
         // display the banner when view is created
@@ -33,10 +31,11 @@ public class GobletView extends View {
 
     private String promptMessage;
 
+    @Override
     public boolean doAction(String userNumber) {
 
         //Get their userAnswer
-        this.promptMessage = "Enter your Answer";
+        this.promptMessage = ("Enter your Answer");
 
         String getAnswer = this.getInput();
         if (getAnswer.toUpperCase().equals("Q")) {
@@ -45,17 +44,29 @@ public class GobletView extends View {
 
         }
         double uAnswer = Double.parseDouble(getAnswer);
-
+        double uNumber = Double.parseDouble(userNumber);
         //Call control function to compare the correct answer with their answer
-        GobletControl.calcGobletMath(0, uAnswer);
+        GobletControl.calcGobletMath(uAnswer, uNumber);
 
+        /*
+        if (uAnswer < 1){
+            System.out.println("invlaid Answer or User number");
+            return false;
+            
+            else{
+                    System.out.println("Your Answer is Correct!");
+                    }
+        }
+         */
         //Print out message of either "correct" return True
         //Else "incorrect" return false
-        //if (uAnswer == GobletControl.calcGobletMath(uAnswer, uAnswer) )
-        //   return "Correct";
-        //else if {
+        if (getAnswer == GobletControl.calcGobletMath(uAnswer, uNumber)) {
+            return true;
+        } //else if {
         //  return "Incorrect"
-        return true;
+        else {
+            return true;
+        }
 
     }
 

@@ -1,5 +1,7 @@
 package byui.cit260.escapeHashashin.view;
 
+import byui.cit260.escapeHashashin.control.GameControl;
+import escapehashashin.EscapeHashashin;
 import java.util.Scanner;
 
 /*
@@ -7,43 +9,40 @@ import java.util.Scanner;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Garen
  */
 public class GameMenuView extends View {
 
+    public GameMenuView() {
+        super(
+                "\n -----------------------------"
+                + "\n| Game Menu                   "
+                + "\n -----------------------------"
+                + "\nA - Advance Forward"
+                + "\nS - Go Back"
+                + "\nD - Hide"
+                + "\nF - Right Room"
+                + "\nG - Left Room"
+                + "\nH - Assassinate"
+                + "\nJ - Map"
+                + "\nK - Search Room"
+                + "\nL - Save Game"
+                + "\nZ - Weapons Inventory"
+                + "\nX - Treasure Inventory"
+                + "\nC - Key Inventory"
+                + "\nQ - Quit"
+                + "\n -----------------------------"
+                + "\nPlease enter the Letter");
 
-   public GameMenuView() {
-       super(
-            "\n -----------------------------"
-            +"\n| Game Menu                   "
-            +"\n -----------------------------"
-            +"\nA - Advance Forward"
-            +"\nS - Go Back"
-            +"\nD - Hide"
-            +"\nF - Right Room"
-            +"\nG - Left Room"
-            +"\nH - Assassinate"
-            +"\nJ - Map"
-            +"\nK - Search Room"
-            +"\nL - Save Game"
-            +"\nZ - Weapons Inventory"
-            +"\nX - Treasure Inventory"
-            +"\nC - Key Inventory"
-            +"\nQ - Quit"
-            +"\n -----------------------------"
-            + "\nPlease enter the Letter");
-         
-    
-   }  
-   
-   @Override
+    }
+
+    @Override
     public boolean doAction(String value) {
-        
+
         value = value.toUpperCase(); //convert choice to upper case
-        
+
         switch (value) {
             case "A": //create and start a new game
                 this.advanceForward();
@@ -81,13 +80,12 @@ public class GameMenuView extends View {
             case "C": //sa
                 this.keyInventory();
                 break;
-            default:  
+            default:
                 System.out.println("\nInvalid selection. Try again");
                 break;
         }
         return true;
-    
-    
+
     }
 
     private void advanceForward() {
@@ -119,7 +117,9 @@ public class GameMenuView extends View {
     }
 
     private void searchRoom() {
-        System.out.println("\nsearchRoom() function called");
+
+        SearchRoomView searchRoomView = new SearchRoomView();
+        searchRoomView.display();
     }
 
     private void saveGame() {
