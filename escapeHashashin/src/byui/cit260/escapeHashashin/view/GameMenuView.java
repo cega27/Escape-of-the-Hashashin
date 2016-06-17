@@ -37,17 +37,9 @@ public class GameMenuView extends View {
             + "\nPlease enter the Letter");
          
     
-   }
+   }  
    
-   
-   
-   
-      
-    
-    
-    
-
-
+   @Override
     public boolean doAction(String value) {
         
         value = value.toUpperCase(); //convert choice to upper case

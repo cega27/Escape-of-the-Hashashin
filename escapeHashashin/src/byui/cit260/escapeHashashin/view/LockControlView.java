@@ -5,6 +5,7 @@
  */
 package byui.cit260.escapeHashashin.view;
 
+import byui.cit260.escapeHashashin.control.DoorLockControl;
 import java.util.Scanner;
 
 import byui.cit260.escapeHashashin.control.HelpControl;
@@ -21,7 +22,6 @@ public class LockControlView extends View {
     private String promptVolt;
     private String promptResist;
     private String promptPower;
-    private String promptMessage;
     
 
     public LockControlView() {
@@ -42,7 +42,7 @@ public class LockControlView extends View {
 
         this.promptResist
                 = "\n ----------------------------------"
-                + "\n| Use a number from 10 to 20       |"
+                + "\n| Use a number from 1 to 10       |"
                 + "\n| Please enter the Resistance 'R': |"
                 + "\n ----------------------------------\n";
 
@@ -51,7 +51,7 @@ public class LockControlView extends View {
                 + "\n|Enter Power:                      |"
                 + "\n ----------------------------------\n";
 
-        this.promptMessage = this.promptVolt;
+        this.displayMessage = this.promptVolt;
     }
 
     @Override
@@ -59,16 +59,17 @@ public class LockControlView extends View {
          //Get their userAnswer
         double voltage = Double.parseDouble(volt);
         
-        this.promptMessage = this.promptResist;
+        this.displayMessage = this.promptResist;
         String getResist = this.getInput();
         
         double resistance = Double.parseDouble(getResist);
         
-        this.promptMessage = this.promptPower;
+        this.displayMessage = this.promptPower;
 
         String getPower = this.getInput();
         double Answer = Double.parseDouble(getPower);
        
+        DoorLockControl.computeAnswer(voltage, resistance, Answer);
         return true;
     }  
 }
