@@ -15,33 +15,30 @@ import byui.cit260.escapeHashashin.view.GameMenuView;
  *
  * @author carlos
  */
-public class MainMenuView extends View{
+public class MainMenuView extends View {
 
-    
     public MainMenuView() {
-        
-        super(    "\n -----------------------------"
-            +"\n| Main Menu                   "
-            +"\n -----------------------------"
-            +"\nN - Start new game"
-            +"\nG - Get and start saved game"
-            +"\nH - Get help on how to play the game"
-            +"\nS - Save game"
-            +"\nV - Goblet"
-            +"\nL - Lock"
-            +"\nQ - Quit"
-            +"\n -----------------------------"
-            + "\nPlease enter the Letter");
-         
-    
-   }
-    
 
-   @Override
+        super("\n -----------------------------"
+                + "\n| Main Menu                   "
+                + "\n -----------------------------"
+                + "\nN - Start new game"
+                + "\nG - Get and start saved game"
+                + "\nH - Get help on how to play the game"
+                + "\nS - Save game"
+                + "\nV - Goblet"
+                + "\nL - Lock"
+                + "\nQ - Quit"
+                + "\n -----------------------------"
+                + "\nPlease enter the Letter");
+
+    }
+
+    @Override
     public boolean doAction(String value) {
-        
+
         value = value.toUpperCase(); //convert choice to upper case
-        
+
         switch (value) {
             case "N": //create and start a new game
                 this.startNewGame();
@@ -61,7 +58,7 @@ public class MainMenuView extends View{
             case "L": // display goblet problem
                 this.lockMath();
                 break;
-            default:  
+            default:
                 System.out.println("\nInvalid selection. Try again");
                 break;
         }
@@ -69,9 +66,9 @@ public class MainMenuView extends View{
     }
 
     private void startNewGame() {
-        
+
         GameControl.createNewGame(EscapeHashashin.getPlayer());
-        
+
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
         /*
@@ -82,23 +79,22 @@ public class MainMenuView extends View{
         
             display the game menu
         END
-        */
+         */
     }
 
     private void startExistingGame() {
-      System.out.println("startExistingGame() function called");
+        System.out.println("startExistingGame() function called");
     }
 
     private void displayHelpMenu() {
-  //      HelpControl.displayHelp(EscapeHashashin.getHelp());
-        
+        //      HelpControl.displayHelp(EscapeHashashin.getHelp());
+
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
 
     private void saveGame() {
-       System.out.println("saveGame() function called");
-        
+        System.out.println("saveGame() function called");
 
     }
 
@@ -106,10 +102,11 @@ public class MainMenuView extends View{
         GobletView gobletView = new GobletView();
         gobletView.display();
     }
+
     private void lockMath() {
         LockControlView lockControlView = new LockControlView();
         lockControlView.display();
 
-   }
-    
+    }
+
 }

@@ -14,17 +14,15 @@ import java.util.Scanner;
  * @author Garen
  */
 public class StartProgramView extends View {
-    
-    public StartProgramView(){
-    
-   super( "\nPlease enter your name");
-         //display the banner when view is created
-         this.displayBanner();
-        }
 
-    
-        
-        private void displayBanner() {
+    public StartProgramView() {
+
+        super("\nPlease enter your name");
+        //display the banner when view is created
+        this.displayBanner();
+    }
+
+    private void displayBanner() {
         System.out.println("\nWelcome to your world as an Assassin. Within history there have been\n"
                 + "many assassins and this is your chance to partake in the killing. You are a\n"
                 + "Hashashin. Hashashin is the word that our modern term assassin stems from.\n"
@@ -32,25 +30,19 @@ public class StartProgramView extends View {
                 + "most efficent and fastest time. Good Luck.");
     }
 
-    
-        
-       
+    public boolean doAction(String playersName) {
 
-        public boolean doAction(String playersName) {
-        
-        
-
-        if (playersName.length() < 2){
+        if (playersName.length() < 2) {
             System.out.println("\nInvlaid players name: " + "This name must be greater than one character in length");
             return false;
-    }
+        }
 
         Player player = GameControl.createPlayer(playersName);
 
         if (player == null) {
-        System.out.println("Error creating the player.");
-        return false;
-    }
+            System.out.println("Error creating the player.");
+            return false;
+        }
         this.displayNextView(player);
 
         /*
@@ -66,23 +58,22 @@ public class StartProgramView extends View {
      
         display mainMenuView
         return true
-*/
-        
+         */
         return true;
-        }
+    }
 
     private void displayNextView(Player player) {
         System.out.println("\n==================================="
-                            + "\n Welcome to the game " + player.getName()
-                            + "\n We hope you have a lot of fun!"
-                            + "\n=================================="
-                            );
-        
+                + "\n Welcome to the game " + player.getName()
+                + "\n We hope you have a lot of fun!"
+                + "\n=================================="
+        );
+
         MainMenuView mainMenuView = new MainMenuView();
-            
+
         mainMenuView.display();
     }
 }
 
-         //END
-    
+//END
+

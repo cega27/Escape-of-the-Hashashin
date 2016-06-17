@@ -20,6 +20,7 @@ import byui.cit260.escapeHashashin.model.Scene;
 import byui.cit260.escapeHashashin.view.GameMenuView;
 import byui.cit260.escapeHashashin.view.GobletView;
 import byui.cit260.escapeHashashin.view.HelpMenuView;
+import byui.cit260.escapeHashashin.view.SearchRoomView;
 import byui.cit260.escapeHashashin.view.StartProgramView;
 
 /**
@@ -30,28 +31,30 @@ public class EscapeHashashin {
 
     private static Game currentGame = null;
     private static Player player = null;
-    
+
     public static void main(String[] args) {
-        
+
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.display();
-        
+
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.display();
-        
+
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayGameMenuView();
-        
+
         GobletView gobletView = new GobletView();
         gobletView.display();
-        
+
+        SearchRoomView searchRoomView = new SearchRoomView();
+        searchRoomView.display();
     }
 
     public static void setPlayer(Player player) {
         EscapeHashashin.player = player;
     }
-    
-    public static Player getPlayer(){
+
+    public static Player getPlayer() {
         return player;
     }
 
@@ -63,7 +66,4 @@ public class EscapeHashashin {
         EscapeHashashin.currentGame = currentGame;
     }
 
-    
-    
-    
 }
