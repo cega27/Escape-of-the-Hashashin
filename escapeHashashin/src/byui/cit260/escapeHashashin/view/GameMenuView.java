@@ -99,7 +99,8 @@ public class GameMenuView extends View {
     }
 
     private void playerHide() {
-        System.out.println("\nplayerHide() function called");
+       HideView hideView = new HideView();
+        hideView.display();
     }
 
     private void rightRoom() {
