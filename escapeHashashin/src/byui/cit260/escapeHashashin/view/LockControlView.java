@@ -69,7 +69,7 @@ public class LockControlView extends View {
         String getPower = this.getInput();
         double Answer = Double.parseDouble(getPower);
        
-        DoorLockControl.computeAnswer(voltage, resistance, Answer);
+        String result = DoorLockControl.computeAnswer(voltage, resistance, Answer);
         return true;
     }  
 }
