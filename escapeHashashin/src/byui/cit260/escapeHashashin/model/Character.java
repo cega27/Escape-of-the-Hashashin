@@ -28,7 +28,42 @@ public enum Character implements Serializable {
     
 
     private final String description;
-    ArrayList<Location> locations = new ArrayList<>();
+    private Conversation[] conversation;
+    private Game game;
+    private Player[] player;
+    ArrayList<Location> location = new ArrayList<>();
+
+    public Conversation[] getConversation() {
+        return conversation;
+    }
+
+    public void setConversation(Conversation[] conversation) {
+        this.conversation = conversation;
+    }
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Player[] getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player[] player) {
+        this.player = player;
+    }
+
+    public ArrayList<Location> getLocation() {
+        return location;
+    }
+
+    public void setLocation(ArrayList<Location> location) {
+        this.location = location;
+    }
     
     
 
@@ -45,10 +80,10 @@ private final Point coordinates;
 
     
 
-    @Override
-        public String toString() {
-        return "Character{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
-    }
+    //@Override
+   //     public String toString() {
+    //    return "Character{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
+   // }
 
     
     

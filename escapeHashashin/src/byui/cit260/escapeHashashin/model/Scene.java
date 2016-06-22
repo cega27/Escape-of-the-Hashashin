@@ -18,6 +18,15 @@ public class Scene implements Serializable{
     private String blockedLocation;
     private String displaySymbol;
     private String hint;
+    private Location location;
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 
     public Scene() {
     }

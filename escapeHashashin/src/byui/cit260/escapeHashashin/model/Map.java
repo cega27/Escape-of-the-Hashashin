@@ -14,6 +14,15 @@ import java.io.Serializable;
 public class Map implements Serializable{
     private double rowCount;
     private double columnCount;
+    private Game[] game;
+
+    public Game[] getGame() {
+        return game;
+    }
+
+    public void setGame(Game[] game) {
+        this.game = game;
+    }
 
     public Map() {
     }

@@ -6,6 +6,7 @@
 package byui.cit260.escapeHashashin.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -17,6 +18,33 @@ public class Location implements Serializable{
     private double row;
     private double column;
     private String visited;
+    private Scene scene;
+    private Conversation[] conversation;
+    ArrayList<Item> items = new ArrayList<>();
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Conversation[] getConversation() {
+        return conversation;
+    }
+
+    public void setConversation(Conversation[] conversation) {
+        this.conversation = conversation;
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
 
     public Location() {
     }

@@ -16,6 +16,24 @@ public class Item implements Serializable {
     
     private String inventoryType;
     private double quantityStock;
+    private Game game;
+    private Location[] location;
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+
+    public Location[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location[] location) {
+        this.location = location;
+    }
 
     public Item() {
     }
