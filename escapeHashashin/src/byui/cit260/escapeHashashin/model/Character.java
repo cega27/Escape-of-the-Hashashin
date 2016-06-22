@@ -5,6 +5,7 @@
  */
 package byui.cit260.escapeHashashin.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,78 +13,54 @@ import java.util.Objects;
  *
  * @author Garen
  */
-public class Character implements Serializable {
+public enum Character implements Serializable {
     
-    private String name;
-    private String description;
-    private double coordinates;
+    King("He was once an evil king. Now he lies in a pool of his own blood."),
+    Cook("Chubby in appearance, the gifted chef/baker can do wonders with spice."),
+    Sir_Edmand("The heir to a crown north of the land who has brought his daughter to wed the prince."),
+    General_Barathian("Head of the guard for the king."),
+    Jaimie("In charge of relations of the kingdom. He makes his goal to meet as many people as possible."),
+    Queen_Alice("The king's kind and mistreated wife. She may be kind and help you along");
+    
+    
+    
+    
 
-    public Character() {
+    private final String description;
+
+private final Point coordinates;
+
+
+
+    Character(String description){
+    this.description = description;
+    coordinates = new Point (1,1); 
+
     }
+   
+
+    
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Objects.hashCode(this.name);
-        hash = 31 * hash + Objects.hashCode(this.description);
-        hash = 31 * hash + (int) (Double.doubleToLongBits(this.coordinates) ^ (Double.doubleToLongBits(this.coordinates) >>> 32));
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Character other = (Character) obj;
-        if (Double.doubleToLongBits(this.coordinates) != Double.doubleToLongBits(other.coordinates)) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
+        public String toString() {
         return "Character{" + "name=" + name + ", description=" + description + ", coordinates=" + coordinates + '}';
     }
 
     
     
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    
 
     public double getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(double coordinates) {
-        this.coordinates = coordinates;
-    }
+   
     
     
 }
