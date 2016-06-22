@@ -7,6 +7,7 @@ package byui.cit260.escapeHashashin.model;
 
 import java.awt.Point;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -27,6 +28,9 @@ public enum Character implements Serializable {
     
 
     private final String description;
+    ArrayList<Location> locations = new ArrayList<>();
+    
+    
 
 private final Point coordinates;
 
@@ -34,7 +38,7 @@ private final Point coordinates;
 
     Character(String description){
     this.description = description;
-    coordinates = new Point (1,1); 
+    this.coordinates = new Point (1,1); 
 
     }
    
@@ -56,7 +60,7 @@ private final Point coordinates;
 
     
 
-    public double getCoordinates() {
+    public Point getCoordinates() {
         return coordinates;
     }
 

@@ -6,6 +6,7 @@
 package byui.cit260.escapeHashashin.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,6 +16,44 @@ public class Game implements Serializable {
     
     private double totalTime;
     private double totalKills;
+    private Player player;
+    private Character character;
+    private Map map;
+    ArrayList<Item> items = new ArrayList<>();
+    
+    
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public ArrayList<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
+    
 
     public Game() {
     }
