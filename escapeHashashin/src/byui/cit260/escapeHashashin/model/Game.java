@@ -110,7 +110,16 @@ public class Game implements Serializable {
     public void setTotalKills(double totalKills) {
         this.totalKills = totalKills;
     }
+
+    public void setItems(Item[] inventoryList) {
+        System.out.println("setItems() called in Game class");
+        }
+
+    public void setCharacter(java.lang.Character character) {
+        System.out.println("setCharacter() called in Game class");
+        }
+    }
     
     
     
-}
+

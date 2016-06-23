@@ -89,7 +89,16 @@ public class Item implements Serializable {
     public void setQuantityStock(double quantityStock) {
         this.quantityStock = quantityStock;
     }
+
+    public void setDescription(String broken_Glass) {
+        {
+        System.out.println("setDescription() called in Item class");
+        
+    }
     
-    
+    }
+
     
 }
+    
+

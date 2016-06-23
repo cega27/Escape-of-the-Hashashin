@@ -6,6 +6,8 @@
 package byui.cit260.escapeHashashin.control;
 
 import byui.cit260.escapeHashashin.model.Game;
+import byui.cit260.escapeHashashin.model.Item;
+import byui.cit260.escapeHashashin.model.Map;
 import byui.cit260.escapeHashashin.model.Player;
 import escapehashashin.EscapeHashashin;
 
@@ -16,28 +18,40 @@ import escapehashashin.EscapeHashashin;
 public class GameControl {
 
     public static Player createPlayer(String playersName) {
-        if (playersName == null){
+        if (playersName == null) {
             return null;
         }
-     Player player = new Player();
-     player.setName(playersName);
-     
-     EscapeHashashin.setPlayer(player);
-     
-     return player;
+        Player player = new Player();
+        player.setName(playersName);
+
+        EscapeHashashin.setPlayer(player);
+
+        return player;
     }
-    
+
     public static String getResponse(String responseNo) {
         System.out.println("\n *** getResponse() called ***");
         return "";
     }
-    
-   
-        
-        public static void createNewGame(Player player) {
-        
-                System.out.println("\ncreateNewGame stub function called");
-        }
+
+    public static void createNewGame(Player player) {
+
+        Game game = new Game(); // create new game
+        EscapeHashashin.setCurrentGame(game); // save in EscapeHashashin
+
+        game.setPlayer(player); // save player in game
+
+        // create the inventory list and save in the game
+        Item[] inventoryList = GameControl.createInventoryList();
+        game.setItems(inventoryList);
+
+        Map map = MapControl.createMap(); // create and initialize new map
+        game.setMap(map); // save map in game
+
+        Character character = CharacterControl.createCharacter();
+        game.setCharacter(character);
+
+    }
 
     public static void startExistingGame(Game currentGame) {
         System.out.println("\nstartExistingGame() called");
@@ -48,9 +62,40 @@ public class GameControl {
     }
 
     public static void searchRoom(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-        
+        System.out.println("searchRoom() called in GameControl class");
     }
 
+    private static Item[] createInventoryList() {
+        // created array(list) of inventory items
+        Item[] inventory
+                = new Item[5];
+
+        Item brokenGlass = new Item();
+        brokenGlass.setDescription("Broken Glass");
+        brokenGlass.setQuantityStock(0);
+        inventory[0] = brokenGlass;
+
+        Item dagger = new Item();
+        dagger.setDescription("Dagger");
+        dagger.setQuantityStock(0);
+        inventory[1] = dagger;
+
+        Item arrowTip = new Item();
+        arrowTip.setDescription("Arrow Tip");
+        arrowTip.setQuantityStock(0);
+        inventory[2] = arrowTip;
+
+        Item heavyRock = new Item();
+        heavyRock.setDescription("Heavy Rock");
+        heavyRock.setQuantityStock(0);
+        inventory[3] = heavyRock;
+
+        Item smallChain = new Item();
+        smallChain.setDescription("Small Chain");
+        smallChain.setQuantityStock(0);
+        inventory[4] = smallChain;
+
+        return inventory;
+    }
+
+}
