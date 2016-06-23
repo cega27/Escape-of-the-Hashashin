@@ -18,6 +18,9 @@ public class Item implements Serializable {
     private double quantityStock;
     private Game game;
     private Location[] location;
+    
+    
+    
 
     public Game getGame() {
         return game;
@@ -95,6 +98,7 @@ public class Item implements Serializable {
         System.out.println("setDescription() called in Item class");
         
     }
+        
     
     }
 

@@ -21,6 +21,14 @@ public class Game implements Serializable {
     private Map map;
     ArrayList<Item> items = new ArrayList<>();
     
+    public class Map implements Serializable{
+    
+        private int noOfRows;
+        private int noOfColumns;
+        private Location[] [] locations;
+    
+    }
+    
     
     public Player getPlayer() {
         return player;
@@ -41,6 +49,7 @@ public class Game implements Serializable {
     public Map getMap() {
         return map;
     }
+    
 
     public void setMap(Map map) {
         this.map = map;

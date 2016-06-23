@@ -64,8 +64,15 @@ public class GameControl {
     public static void searchRoom(Player player) {
         System.out.println("searchRoom() called in GameControl class");
     }
+    public enum InventoryItem{
+    brokenGlass,
+    dagger,
+    arrowTip,
+    heavyRock,
+    smallChain;
+    }
 
-    private static Item[] createInventoryList() {
+    public static Item[] createInventoryList() {
         // created array(list) of inventory items
         Item[] inventory
                 = new Item[5];
@@ -73,27 +80,27 @@ public class GameControl {
         Item brokenGlass = new Item();
         brokenGlass.setDescription("Broken Glass");
         brokenGlass.setQuantityStock(0);
-        inventory[0] = brokenGlass;
+        inventory[InventoryItem.brokenGlass.ordinal()] = brokenGlass;
 
         Item dagger = new Item();
         dagger.setDescription("Dagger");
         dagger.setQuantityStock(0);
-        inventory[1] = dagger;
+        inventory[InventoryItem.dagger.ordinal()] = dagger;
 
         Item arrowTip = new Item();
         arrowTip.setDescription("Arrow Tip");
         arrowTip.setQuantityStock(0);
-        inventory[2] = arrowTip;
+        inventory[InventoryItem.arrowTip.ordinal()] = arrowTip;
 
         Item heavyRock = new Item();
         heavyRock.setDescription("Heavy Rock");
         heavyRock.setQuantityStock(0);
-        inventory[3] = heavyRock;
+        inventory[InventoryItem.heavyRock.ordinal()] = heavyRock;
 
         Item smallChain = new Item();
         smallChain.setDescription("Small Chain");
         smallChain.setQuantityStock(0);
-        inventory[4] = smallChain;
+        inventory[InventoryItem.smallChain.ordinal()] = smallChain;
 
         return inventory;
     }
