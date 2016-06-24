@@ -20,6 +20,10 @@ public class Game implements Serializable {
     private Character character;
     private Map map;
     ArrayList<Item> items = new ArrayList<>();
+
+    public void setMap(byui.cit260.escapeHashashin.model.Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public class Map implements Serializable{
     

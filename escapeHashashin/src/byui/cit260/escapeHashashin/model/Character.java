@@ -16,7 +16,7 @@ import java.util.Objects;
  */
 public enum Character implements Serializable {
     
-    King("He was once an evil king. Now he lies in a pool of his own blood."),
+    
     Cook("Chubby in appearance, the gifted chef/baker can do wonders with spice."),
     Sir_Edmand("The heir to a crown north of the land who has brought his daughter to wed the prince."),
     General_Barathian("Head of the guard for the king."),
