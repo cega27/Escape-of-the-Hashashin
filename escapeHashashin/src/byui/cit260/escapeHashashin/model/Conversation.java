@@ -12,78 +12,46 @@ import java.util.Objects;
  *
  * @author Garen
  */
-public class Conversation implements Serializable {
+public enum Conversation implements Serializable {
     
-    private String description;
-    private String choice;
-    private String response;
-
-    public Conversation() {
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 29 * hash + Objects.hashCode(this.description);
-        hash = 29 * hash + Objects.hashCode(this.choice);
-        hash = 29 * hash + Objects.hashCode(this.response);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Conversation other = (Conversation) obj;
-        if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.choice, other.choice)) {
-            return false;
-        }
-        if (!Objects.equals(this.response, other.response)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Conversation{" + "description=" + description + ", choice=" + choice + ", response=" + response + '}';
-    }
-
+    CookOne("This response will return a positive feedback"),
+    CookTwo("This response will irritate the cook"),
+    CookThree("This response will terminate the conversation"),
+    GeneralOne("This response will return a clue"),
+    GeneralTwo("This response will rise suspicious"),
+    GeneralThree("This response will put you in trouble"),
+    JaimeOne("This response will return a clue for the next scene"),
+    JaimeTwo("This response will return a sarcastic response"),
+    JaimeThree("This response might rise suspicious"),
+    SirEdOne("This response will return a clue"),
+    SirEdTwo("This response will end the conversation"),
+    SirEdThree("This response will return a misleading clue"),
+    QueenOne("This response will return a clue"),
+    QueenTwo("This response will unuseful information"),
+    QueenThree("This response will terminate the conversation");
     
+    private final String description;
+    private final String choice;
+    private Character character;
+    
+    public Character getCharacter(){
+        return character;
+    }
+    public void setChaaracter(Character character){
+        this.character = character;
+    }
+    
+    Conversation(String description){
+        this.description = description;
+        choice = new String();        
+    }
     
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getChoice() {
         return choice;
     }
 
-    public void setChoice(String choice) {
-        this.choice = choice;
-    }
-
-    public String getResponse() {
-        return response;
-    }
-
-    public void setResponse(String response) {
-        this.response = response;
-    }
-    
-    
 }
