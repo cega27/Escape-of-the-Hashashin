@@ -9,6 +9,7 @@ import byui.cit260.escapeHashashin.model.Game;
 import byui.cit260.escapeHashashin.model.Item;
 import byui.cit260.escapeHashashin.model.Map;
 import byui.cit260.escapeHashashin.model.Player;
+import byui.cit260.escapeHashashin.model.Scene;
 import escapehashashin.EscapeHashashin;
 
 /**
@@ -64,6 +65,8 @@ public class GameControl {
     public static void searchRoom(Player player) {
         System.out.println("searchRoom() called in GameControl class");
     }
+
+    
     public enum InventoryItem{
     brokenGlass,
     dagger,
@@ -104,5 +107,10 @@ public class GameControl {
 
         return inventory;
     }
+    
+   
+    
+    
+    
 
 }

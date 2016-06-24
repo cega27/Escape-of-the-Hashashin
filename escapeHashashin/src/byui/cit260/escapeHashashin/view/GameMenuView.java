@@ -1,6 +1,8 @@
 package byui.cit260.escapeHashashin.view;
 
 import byui.cit260.escapeHashashin.control.GameControl;
+import byui.cit260.escapeHashashin.model.Game;
+import byui.cit260.escapeHashashin.model.Item;
 import escapehashashin.EscapeHashashin;
 import java.util.Scanner;
 
@@ -128,7 +130,29 @@ public class GameMenuView extends View {
     }
 
     private void weaponsInventory() {
-        System.out.println("\nweaponsInventory() function called");
+        StringBuilder line;
+        
+        Game game = EscapeHashashin.getCurrentGame();
+        Item[] inventory = game.getInventory();
+        
+        System.out.println("\n Weapon Inventory Items");
+        line = new StringBuilder("                                   ");
+        line.insert(0, "Description");
+        line.insert(20, "In Stock");
+        System.out.println(line.toString());
+        
+        //for each inventory item
+        for (Item item : inventory) {
+            line = new StringBuilder("                                ");
+            line.insert(0, item.getDescription());
+            line.insert(23, item.getQuantityStock());
+            
+            // display the line
+            
+            System.out.println(line.toString());
+            
+    }
+        
     }
 
     private void treasureInventory() {

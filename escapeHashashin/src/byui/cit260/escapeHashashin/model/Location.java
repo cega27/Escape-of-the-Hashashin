@@ -20,7 +20,7 @@ public class Location implements Serializable{
     private boolean visited;
     private Scene scene;
     private Conversation[] conversation;
-    ArrayList<Item> items = new ArrayList<>();
+    private Item[] item;
     private ArrayList<Character> characters;
 
     public Scene getScene() {
@@ -39,13 +39,7 @@ public class Location implements Serializable{
         this.conversation = conversation;
     }
 
-    public ArrayList<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(ArrayList<Item> items) {
-        this.items = items;
-    }
+    
 
     public Location() {
     }

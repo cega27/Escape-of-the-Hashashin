@@ -24,6 +24,10 @@ public class Game implements Serializable {
     public void setMap(byui.cit260.escapeHashashin.model.Map map) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public Item[] getInventory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public class Map implements Serializable{
     
