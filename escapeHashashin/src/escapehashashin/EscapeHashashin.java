@@ -8,7 +8,7 @@ package escapehashashin;
 import byui.cit260.escapeHashashin.model.Conversation;
 import byui.cit260.escapeHashashin.model.Player;
 import byui.cit260.escapeHashashin.model.Character;
-import byui.cit260.escapeHashashin.model.ConversationType;
+
 import byui.cit260.escapeHashashin.model.DiscoveryType;
 import byui.cit260.escapeHashashin.model.Game;
 import byui.cit260.escapeHashashin.model.Item;
