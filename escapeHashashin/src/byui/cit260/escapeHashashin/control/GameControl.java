@@ -66,6 +66,10 @@ public class GameControl {
         System.out.println("searchRoom() called in GameControl class");
     }
 
+    static void assignScenesToLocations(Map map, Scene[] scenes) {
+       System.out.println("assignScenesToLocations() called");
+    }
+
     
     public enum InventoryItem{
     brokenGlass,
