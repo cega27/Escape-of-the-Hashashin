@@ -74,7 +74,7 @@ public class GameMenuView extends View {
                 this.saveGame();
                 break;
             case "Z": // display the help menu
-                this.weaponsInventory();
+                this.Inventory();
                 break;
             case "X": //save the current game
                 this.treasureInventory();
@@ -129,7 +129,7 @@ public class GameMenuView extends View {
         System.out.println("\nsaveGame() function called");
     }
 
-    private void weaponsInventory() {
+    private void Inventory() {
         StringBuilder line;
         
         Game game = EscapeHashashin.getCurrentGame();
