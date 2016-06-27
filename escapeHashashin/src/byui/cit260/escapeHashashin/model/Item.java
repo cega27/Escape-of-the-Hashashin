@@ -16,6 +16,7 @@ public class Item implements Serializable {
     
     private String inventoryType;
     private double quantityStock;
+    private String description;
     private Game game;
     private Location[] location;
     
@@ -84,8 +85,11 @@ public class Item implements Serializable {
     public void setInventoryType(String inventoryType) {
         this.inventoryType = inventoryType;
     }
+    public String getDescription(){
+        return description;
+    }
 
-    public double getQuantityStock() {
+    public  double getQuantityStock() {
         return quantityStock;
     }
 
