@@ -13,15 +13,12 @@ import java.util.Objects;
  * @author Garen
  */
 public class Item implements Serializable {
-    
+
     private String inventoryType;
     private double quantityStock;
     private String description;
     private Game game;
     private Location[] location;
-    
-    
-    
 
     public Game getGame() {
         return game;
@@ -75,9 +72,7 @@ public class Item implements Serializable {
     public String toString() {
         return "Item{" + "inventoryType=" + inventoryType + ", quantityStock=" + quantityStock + '}';
     }
-    
-    
-    
+
     public String getInventoryType() {
         return inventoryType;
     }
@@ -85,11 +80,12 @@ public class Item implements Serializable {
     public void setInventoryType(String inventoryType) {
         this.inventoryType = inventoryType;
     }
-    public String getDescription(){
+
+    public String getDescription() {
         return description;
     }
 
-    public  double getQuantityStock() {
+    public double getQuantityStock() {
         return quantityStock;
     }
 
@@ -99,14 +95,10 @@ public class Item implements Serializable {
 
     public void setDescription(String broken_Glass) {
         {
-        System.out.println("setDescription() called in Item class");
-        
-    }
-        
-    
+            System.out.println("setDescription() called in Item class");
+
+        }
+
     }
 
-    
 }
-    
-

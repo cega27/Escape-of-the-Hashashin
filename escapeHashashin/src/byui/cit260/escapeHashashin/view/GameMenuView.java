@@ -3,6 +3,8 @@ package byui.cit260.escapeHashashin.view;
 import byui.cit260.escapeHashashin.control.GameControl;
 import byui.cit260.escapeHashashin.model.Game;
 import byui.cit260.escapeHashashin.model.Item;
+import byui.cit260.escapeHashashin.model.Location;
+import byui.cit260.escapeHashashin.model.Map;
 import escapehashashin.EscapeHashashin;
 import java.util.Scanner;
 
@@ -116,7 +118,15 @@ public class GameMenuView extends View {
     }
 
     private void displayMap() {
-        System.out.println("\ndisplayMap() function called");
+       Game game = new Game();
+       game = EscapeHashashin.getCurrentGame();
+       
+       Map map = new Map();
+       map = game.getMap();
+       
+        Location[][] locations = map.getLocations();
+       
+       //Location[] [] locations 
     }
 
     private void searchRoom() {
@@ -133,7 +143,7 @@ public class GameMenuView extends View {
         StringBuilder line;
         
         Game game = EscapeHashashin.getCurrentGame();
-        Item[] inventory = game.getInventory();
+        Item[] inventory = game.getItems();
         
         System.out.println("\n Weapon Inventory Items");
         line = new StringBuilder("                                   ");

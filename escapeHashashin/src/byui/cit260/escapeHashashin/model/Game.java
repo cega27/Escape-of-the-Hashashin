@@ -21,21 +21,14 @@ public class Game implements Serializable {
     private Map map;
     private Item[] items;
 
-    public void setMap(byui.cit260.escapeHashashin.model.Map map) {
-        System.out.println("setMap() called in Game class");
-    }
-
-    public Item[] getInventory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public class Map implements Serializable {
-
-        private int noOfRows;
-        private int noOfColumns;
-        private Location[][] locations;
-
-    }
+   
+//    public class Map implements Serializable {
+//
+//        private int noOfRows;
+//        private int noOfColumns;
+//        private Location[][] locations;
+//
+//    }
 
     public Player getPlayer() {
         return player;
@@ -60,6 +53,9 @@ public class Game implements Serializable {
     public void setMap(Map map) {
         this.map = map;
     }
+
+    
+    
 
     public Game() {
     }
@@ -114,8 +110,8 @@ public class Game implements Serializable {
         this.totalKills = totalKills;
     }
 
-    public void setItems(Item[] inventoryList) {
-        System.out.println("setItems() called in Game class");
+    public void setItems(Item[] items) {
+        this.items = items;
     }
 
     public Item[] getItems() {
