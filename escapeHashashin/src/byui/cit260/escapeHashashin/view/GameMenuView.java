@@ -125,6 +125,14 @@ public class GameMenuView extends View {
        map = game.getMap();
        
         Location[][] locations = map.getLocations();
+        
+    //    for ( row = 0; row < locations.length; row++) {
+    //        for( column = 0; column < locations.length; column++){
+                
+     //       }
+    //    }
+        
+        
        
        //Location[] [] locations 
     }
