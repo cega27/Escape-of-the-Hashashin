@@ -15,7 +15,7 @@ import byui.cit260.escapeHashashin.model.Scene;
  */
 class MapControl {
 
-    static Map createMap() {
+   public static Map createMap() {
         //create the map
         Map map = new Map(5, 5);
 

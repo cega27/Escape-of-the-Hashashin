@@ -31,6 +31,7 @@ public class EscapeHashashin {
 
     private static Game currentGame = null;
     private static Player player = null;
+    
 
     public static void main(String[] args) {
 

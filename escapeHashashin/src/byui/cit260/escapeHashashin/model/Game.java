@@ -13,31 +13,23 @@ import java.util.ArrayList;
  * @author Garen
  */
 public class Game implements Serializable {
-    
+
     private double totalTime;
     private double totalKills;
     private Player player;
     private Character character;
     private Map map;
-    ArrayList<Item> items = new ArrayList<>();
+    private Item[] items;
 
-    public void setMap(byui.cit260.escapeHashashin.model.Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
+//    public class Map implements Serializable {
+//
+//        private int noOfRows;
+//        private int noOfColumns;
+//        private Location[][] locations;
+//
+//    }
 
-    public Item[] getInventory() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    public class Map implements Serializable{
-    
-        private int noOfRows;
-        private int noOfColumns;
-        private Location[] [] locations;
-    
-    }
-    
-    
     public Player getPlayer() {
         return player;
     }
@@ -57,19 +49,12 @@ public class Game implements Serializable {
     public Map getMap() {
         return map;
     }
-    
 
     public void setMap(Map map) {
         this.map = map;
     }
 
-    public ArrayList<Item> getItems() {
-        return items;
-    }
-
-    public void setItems(ArrayList<Item> items) {
-        this.items = items;
-    }
+    
     
 
     public Game() {
@@ -109,9 +94,6 @@ public class Game implements Serializable {
         return "Game{" + "totalTime=" + totalTime + ", totalKills=" + totalKills + '}';
     }
 
-    
-    
-    
     public double getTotalTime() {
         return totalTime;
     }
@@ -128,15 +110,15 @@ public class Game implements Serializable {
         this.totalKills = totalKills;
     }
 
-    public void setItems(Item[] inventoryList) {
-        System.out.println("setItems() called in Game class");
-        }
+    public void setItems(Item[] items) {
+        this.items = items;
+    }
+
+    public Item[] getItems() {
+        return items;
+    }
 
     public void setCharacter(java.lang.Character character) {
         System.out.println("setCharacter() called in Game class");
-        }
     }
-    
-    
-    
-
+}

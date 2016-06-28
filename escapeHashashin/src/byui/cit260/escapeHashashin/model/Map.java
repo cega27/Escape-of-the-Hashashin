@@ -11,46 +11,43 @@ import java.io.Serializable;
  *
  * @author carlos
  */
-public class Map implements Serializable{
-    
+public class Map implements Serializable {
+
     private Game[] game;
     private int noOfRows;
     private int noOfColumns;
     private Location[][] locations;
-    
-    
-    
-    public Map(){
-   }
-   
-   public Map(int noOfRows, int noOfColumns) {
-       
-       if (noOfRows < 1 || noOfColumns < 1){
-           System.out.println("The number of rows and columns must be > zero");
-           
-           return;         
-       }
-   
-       this.noOfRows = noOfRows;
-       this.noOfColumns = noOfColumns;
-       // create 2-D array for Location objects
-       this.locations = new Location[noOfRows][noOfColumns];
-       
-       for (int row = 0; row < noOfRows; row++){
-           for (int column = 0; column < noOfColumns; column++){
-           //create and initialize new location object instance
-           Location location = new Location();
-           location.setColumn(column);
-           location.setRow(row);
-           location.setVisited(false);
-           
-           //assign the location object to the current position in aary
-           locations[row][column] = location;
-       }
-       }
-    
-    
-   }
+
+    public Map() {
+    }
+
+    public Map(int noOfRows, int noOfColumns) {
+
+        if (noOfRows < 1 || noOfColumns < 1) {
+            System.out.println("The number of rows and columns must be > zero");
+
+            return;
+        }
+
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        // create 2-D array for Location objects
+        this.locations = new Location[noOfRows][noOfColumns];
+
+        for (int row = 0; row < noOfRows; row++) {
+            for (int column = 0; column < noOfColumns; column++) {
+                //create and initialize new location object instance
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                //location.setVisited(false);
+
+                //assign the location object to the current position in aary
+                locations[row][column] = location;
+            }
+        }
+
+    }
 
     public int getNoOfRows() {
         return noOfRows;
@@ -76,17 +73,13 @@ public class Map implements Serializable{
         this.locations = locations;
     }
 
-    
-
-    
-public Game[] getGame() {
+    public Game[] getGame() {
         return game;
     }
 
     public void setGame(Game[] game) {
         this.game = game;
     }
-    
 
     @Override
     public int hashCode() {
@@ -121,6 +114,5 @@ public Game[] getGame() {
         }
         return true;
     }
-    
-    
+
 }
