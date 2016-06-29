@@ -8,6 +8,7 @@ package byui.cit260.escapeHashashin.control;
 import byui.cit260.escapeHashashin.model.Location;
 import byui.cit260.escapeHashashin.model.Map;
 import byui.cit260.escapeHashashin.model.Scene;
+import java.util.Arrays;
 
 /**
  *
@@ -27,7 +28,7 @@ class MapControl {
 
         return map;
 
-    }
+    }                
 
     public enum SceneType {
         start,
@@ -53,6 +54,7 @@ class MapControl {
         boat;
 
     }
+    
 
     private static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
@@ -277,5 +279,5 @@ class MapControl {
         locations[2][2].setScene(scenes[SceneType.boat.ordinal()]);
 
     }
-
+    
 }

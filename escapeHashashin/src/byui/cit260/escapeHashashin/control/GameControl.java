@@ -12,6 +12,7 @@ import byui.cit260.escapeHashashin.model.Player;
 import byui.cit260.escapeHashashin.model.Scene;
 import escapehashashin.EscapeHashashin;
 
+
 /**
  *
  * @author Garen
@@ -77,6 +78,8 @@ public class GameControl {
     heavyRock,
     smallChain;
     }
+    
+    
 
     public static Item[] createInventoryList() {
         // created array(list) of inventory items
@@ -107,6 +110,8 @@ public class GameControl {
         smallChain.setDescription("Small Chain");
         smallChain.setQuantityStock(0);
         inventory[InventoryItem.smallChain.ordinal()] = smallChain;
+        
+        
 
         return inventory;
     }

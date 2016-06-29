@@ -93,12 +93,8 @@ public class Item implements Serializable {
         this.quantityStock = quantityStock;
     }
 
-    public void setDescription(String broken_Glass) {
-        {
-            System.out.println("setDescription() called in Item class");
-
-        }
-
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }
