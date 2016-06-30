@@ -176,14 +176,14 @@ public class MapControl {
                 + "his goal to converse with everyone at the event. Now its your turn.");
         conversation2Scene.setMapSymbol("C2");
         conversation2Scene.setBlocked(false);
-        scenes[SceneType.mainHall.ordinal()] = conversation2Scene;
+        scenes[SceneType.conversation2.ordinal()] = conversation2Scene;
 
         Scene conversation3Scene = new Scene();
         conversation3Scene.setDescription("Head of the guard General Barathian approaches. You"
                 + "better be convincing.");
         conversation3Scene.setMapSymbol("C3");
         conversation3Scene.setBlocked(false);
-        scenes[SceneType.mainHall.ordinal()] = conversation3Scene;
+        scenes[SceneType.conversation3.ordinal()] = conversation3Scene;
 
         Scene conversation4Scene = new Scene();
         conversation4Scene.setDescription("The chef is very busy and very stressed "
@@ -192,7 +192,7 @@ public class MapControl {
                 + "value you could use.");
         conversation4Scene.setMapSymbol("C4");
         conversation4Scene.setBlocked(false);
-        scenes[SceneType.mainHall.ordinal()] = conversation4Scene;
+        scenes[SceneType.conversation4.ordinal()] = conversation4Scene;
 
         Scene gardenScene = new Scene();
         gardenScene.setDescription("The moon is bright tonight. No sneaking around without "
