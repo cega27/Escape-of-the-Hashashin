@@ -1,6 +1,7 @@
 package byui.cit260.escapeHashashin.view;
 
 import byui.cit260.escapeHashashin.control.GameControl;
+import byui.cit260.escapeHashashin.control.MapControl;
 import byui.cit260.escapeHashashin.model.Game;
 import byui.cit260.escapeHashashin.model.Item;
 import byui.cit260.escapeHashashin.model.Location;
@@ -122,18 +123,18 @@ public class GameMenuView extends View {
         game = EscapeHashashin.getCurrentGame();
 
         Map map = new Map();
-        map = game.getMap();
+        map = EscapeHashashin.getCurrentGame().getMap();
 
         Location[][] locations = map.getLocations();
         System.out.print("\n Escape Of the Hashashin \n");
-       System.out.printf("%-7s %-7s %-7s %-7s %-7s %-7s \n", " ", "0", "1", "2", "3","4"); 
+        System.out.printf("%-5s %-5s %-5s %-5s %-5s %-5s \n", " ", "0", "1", "2", "3","4"); 
        
                 
         for (int i = 0; i < locations.length; i++) {
             System.out.print("\n" + String.valueOf(i) + " | ");
             for(int k = 0; k < locations[i].length; k++) {
                 
-                System.out.print(locations[i][k] + " | ");
+                System.out.print(locations[i][k].getScene().getDisplaySymbol() + " | ");
                 
             }
             

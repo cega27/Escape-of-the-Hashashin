@@ -39,8 +39,6 @@ public class GameControl {
     public static void createNewGame(Player player) {
 
         Game game = new Game(); // create new game
-        EscapeHashashin.setCurrentGame(game); // save in EscapeHashashin
-
         game.setPlayer(player); // save player in game
 
         // create the inventory list and save in the game
@@ -51,6 +49,7 @@ public class GameControl {
         game.setMap(map); // save map in game
 
        
+        EscapeHashashin.setCurrentGame(game); // save in EscapeHashashin
 
     }
 

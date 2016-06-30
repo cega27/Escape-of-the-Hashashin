@@ -12,21 +12,11 @@ import java.util.Objects;
  *
  * @author carlos
  */
-public class Scene implements Serializable{
-    
+public class Scene implements Serializable {
+
     private String description;
-    private String blockedLocation;
+    private boolean blockedLocation;
     private String displaySymbol;
-    private String hint;
-    private Location location;
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
 
     public Scene() {
     }
@@ -39,11 +29,11 @@ public class Scene implements Serializable{
         this.description = description;
     }
 
-    public String getBlockedLocation() {
+    public boolean getBlockedLocation() {
         return blockedLocation;
     }
 
-    public void setBlockedLocation(String blockedLocation) {
+    public void setBlockedLocation(boolean blockedLocation) {
         this.blockedLocation = blockedLocation;
     }
 
@@ -55,27 +45,19 @@ public class Scene implements Serializable{
         this.displaySymbol = displaySymbol;
     }
 
-    public String getHint() {
-        return hint;
-    }
-
-    public void setHint(String hint) {
-        this.hint = hint;
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 17 * hash + Objects.hashCode(this.description);
         hash = 17 * hash + Objects.hashCode(this.blockedLocation);
         hash = 17 * hash + Objects.hashCode(this.displaySymbol);
-        hash = 17 * hash + Objects.hashCode(this.hint);
+     
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Scene{" + "description=" + description + ", blockedLocation=" + blockedLocation + ", displaySymbol=" + displaySymbol + ", hint=" + hint + '}';
+        return "Scene{" + "description=" + description + ", blockedLocation=" + blockedLocation + ", displaySymbol=" + displaySymbol + '}';
     }
 
     @Override
@@ -99,26 +81,15 @@ public class Scene implements Serializable{
         if (!Objects.equals(this.displaySymbol, other.displaySymbol)) {
             return false;
         }
-        if (!Objects.equals(this.hint, other.hint)) {
-            return false;
-        }
+        
         return true;
     }
 
-    public void setMapSymbol(String st) {
-        System.out.println("setMapSymbol() called");
-        
+    public void setMapSymbol(String symbol) {
+        this.displaySymbol = symbol;
     }
 
-    public void setBlocked(boolean b) {
-        System.out.println("setBlocked () called");
-        
+    public void setBlocked(boolean blocked) {
+        this.blockedLocation = blocked;
     }
-
-    public void setScore(int i) {
-        System.out.println("setScore () called");
-        
-    }
-    
-    
 }
