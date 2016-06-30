@@ -126,7 +126,7 @@ public class GameMenuView extends View {
 
         Location[][] locations = map.getLocations();
         System.out.print("\n Escape Of the Hashashin \n");
-       System.out.printf("%-7s %-7s %-7s %-7s %-7s %-7s %-7s \n", " ", "0", "1", "2", "3","4", "5"); 
+       System.out.printf("%-7s %-7s %-7s %-7s %-7s %-7s \n", " ", "0", "1", "2", "3","4"); 
        
                 
         for (int i = 0; i < locations.length; i++) {
