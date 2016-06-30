@@ -5,15 +5,19 @@
  */
 package byui.cit260.escapeHashashin.control;
 
+import byui.cit260.escapeHashashin.exceptions.DoorLockControlException;
+
 /**
  *
  * @author carlos
  */
 public class DoorLockControl {
-    public static String computeAnswer(double voltage, double resistance, double uAnswer){
+   
+    public static String computeAnswer(double voltage, double resistance, double uAnswer)
+                                    throws DoorLockControlException{
     
         if(voltage < 10 || resistance < 1 || voltage > 20 || resistance > 10){
-            return "Error";
+            throw new DoorLockControlException("Error the Voltage or Resistance is invalid");
     }
         else{    
             double voltageP = Math.pow(voltage,2);
