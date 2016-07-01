@@ -9,26 +9,25 @@ package byui.cit260.escapeHashashin.exceptions;
  *
  * @author carlos
  */
-public class MapControlException extends Exception {
+public class DoorLockControlException extends Exception {
 
-    public MapControlException() {
+    public DoorLockControlException() {
     }
 
-    public MapControlException(String message) {
+    public DoorLockControlException(String message) {
         super(message);
     }
 
-    public MapControlException(String message, Throwable cause) {
+    public DoorLockControlException(String message, Throwable cause) {
         super(message, cause);
     }
 
-    public MapControlException(Throwable cause) {
+    public DoorLockControlException(Throwable cause) {
         super(cause);
     }
 
-    public MapControlException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    public DoorLockControlException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
-    
     
 }

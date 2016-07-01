@@ -9,9 +9,12 @@ import byui.cit260.escapeHashashin.control.DoorLockControl;
 import java.util.Scanner;
 
 import byui.cit260.escapeHashashin.control.HelpControl;
+import byui.cit260.escapeHashashin.exceptions.DoorLockControlException;
 import escapehashashin.EscapeHashashin;
 import java.util.Scanner;
 import byui.cit260.escapeHashashin.view.GameMenuView;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -67,9 +70,15 @@ public class LockControlView extends View {
         this.displayMessage = this.promptPower;
 
         String getPower = this.getInput();
-        double Answer = Double.parseDouble(getPower);
+        double uAnswer = Double.parseDouble(getPower);
        
-        String result = DoorLockControl.computeAnswer(voltage, resistance, Answer);
+        try {
+            String result = DoorLockControl.computeAnswer(voltage, resistance, uAnswer);
+        } 
+        catch (DoorLockControlException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
         return true;
     }  
 }

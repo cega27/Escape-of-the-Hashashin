@@ -11,6 +11,7 @@ import byui.cit260.escapeHashashin.model.Map;
 import byui.cit260.escapeHashashin.model.Player;
 import byui.cit260.escapeHashashin.model.Scene;
 import escapehashashin.EscapeHashashin;
+import java.util.Collections;
 
 /**
  *
@@ -80,8 +81,7 @@ public class GameControl {
 
     public static Item[] createInventoryList() {
         // created array(list) of inventory items
-        Item[] inventory
-                = new Item[5];
+        Item[] inventory = new Item[5];
 
         Item brokenGlass = new Item();
         brokenGlass.setDescription("Broken Glass");
@@ -109,11 +109,7 @@ public class GameControl {
         inventory[InventoryItem.smallChain.ordinal()] = smallChain;
 
         return inventory;
+        
     }
-    
-   
-    
-    
-    
 
 }
