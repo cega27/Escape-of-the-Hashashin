@@ -1,6 +1,7 @@
 package byui.cit260.escapeHashashin.view;
 
 import byui.cit260.escapeHashashin.control.GameControl;
+import byui.cit260.escapeHashashin.control.MapControl;
 import byui.cit260.escapeHashashin.model.Game;
 import byui.cit260.escapeHashashin.model.Item;
 import byui.cit260.escapeHashashin.model.Location;
@@ -101,7 +102,7 @@ public class GameMenuView extends View {
     }
 
     private void playerHide() {
-       HideView hideView = new HideView();
+        HideView hideView = new HideView();
         hideView.display();
     }
 
@@ -118,15 +119,33 @@ public class GameMenuView extends View {
     }
 
     private void displayMap() {
-       Game game = new Game();
-       game = EscapeHashashin.getCurrentGame();
-       
-       Map map = new Map();
-       map = game.getMap();
-       
+        Game game = new Game();
+        game = EscapeHashashin.getCurrentGame();
+
+        Map map = new Map();
+        map = EscapeHashashin.getCurrentGame().getMap();
+
         Location[][] locations = map.getLocations();
+        System.out.print("\n Escape Of the Hashashin \n");
+        System.out.printf("%-3.5s %-4.5s %-4.5s %-4.5s %-4.5s %-4.5s \n", " ", "0 ", "1 ", "2 ","3 ","4"); 
        
-       //Location[] [] locations 
+                
+        for (int i = 0; i < locations.length; i++) {
+            System.out.print("\n" + String.valueOf(i) + " | ");
+            for(int k = 0; k < locations[i].length; k++) {
+                
+                System.out.print(locations[i][k].getScene().getDisplaySymbol() + " | ");
+                
+            }
+            
+            
+            System.out.println(" ");
+                    
+            
+
+        }
+
+        //Location[] [] locations 
     }
 
     private void searchRoom() {
@@ -141,28 +160,27 @@ public class GameMenuView extends View {
 
     private void Inventory() {
         StringBuilder line;
-        
+
         Game game = EscapeHashashin.getCurrentGame();
         Item[] inventory = game.getItems();
-        
+
         System.out.println("\n Weapon Inventory Items");
         line = new StringBuilder("                                   ");
         line.insert(0, "Description");
         line.insert(20, "In Stock");
         System.out.println(line.toString());
-        
+
         //for each inventory item
         for (Item item : inventory) {
             line = new StringBuilder("                                ");
             line.insert(0, item.getDescription());
             line.insert(23, item.getQuantityStock());
-            
+
             // display the line
-            
             System.out.println(line.toString());
-            
-    }
-        
+
+        }
+
     }
 
     private void treasureInventory() {

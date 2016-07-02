@@ -13,6 +13,7 @@ import byui.cit260.escapeHashashin.model.Scene;
 import escapehashashin.EscapeHashashin;
 import java.util.Collections;
 
+
 /**
  *
  * @author Garen
@@ -39,8 +40,6 @@ public class GameControl {
     public static void createNewGame(Player player) {
 
         Game game = new Game(); // create new game
-        EscapeHashashin.setCurrentGame(game); // save in EscapeHashashin
-
         game.setPlayer(player); // save player in game
 
         // create the inventory list and save in the game
@@ -51,6 +50,7 @@ public class GameControl {
         game.setMap(map); // save map in game
 
        
+        EscapeHashashin.setCurrentGame(game); // save in EscapeHashashin
 
     }
 
@@ -78,6 +78,8 @@ public class GameControl {
     heavyRock,
     smallChain;
     }
+    
+    
 
     public static Item[] createInventoryList() {
         // created array(list) of inventory items
@@ -107,6 +109,8 @@ public class GameControl {
         smallChain.setDescription("Small Chain");
         smallChain.setQuantityStock(0);
         inventory[InventoryItem.smallChain.ordinal()] = smallChain;
+        
+        
 
         return inventory;
         
