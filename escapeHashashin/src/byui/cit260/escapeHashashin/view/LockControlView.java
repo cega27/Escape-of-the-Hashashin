@@ -45,7 +45,7 @@ public class LockControlView extends View {
 
         this.promptResist
                 = "\n ----------------------------------"
-                + "\n| Use a number from 1 to 10       |"
+                + "\n| Use a number from 1 to 10        |"
                 + "\n| Please enter the Resistance 'R': |"
                 + "\n ----------------------------------\n";
 
@@ -59,7 +59,7 @@ public class LockControlView extends View {
 
     @Override
     public boolean doAction(String volt) {
-         //Get their userAnswer
+         //Get their volt
         double voltage = Double.parseDouble(volt);
         
         this.displayMessage = this.promptResist;
@@ -73,7 +73,7 @@ public class LockControlView extends View {
         double uAnswer = Double.parseDouble(getPower);
        
         try {
-            String result = DoorLockControl.computeAnswer(voltage, resistance, uAnswer);
+            String results = DoorLockControl.computeAnswer(voltage, resistance, uAnswer);
         } 
         catch (DoorLockControlException ex) {
             System.out.println(ex.getMessage());

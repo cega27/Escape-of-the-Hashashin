@@ -5,30 +5,26 @@
  */
 package byui.cit260.escapeHashashin.control;
 
+import byui.cit260.escapeHashashin.exceptions.MazeControlException;
+
 /**
  *
  * @author Garen
  */
 public class MazeControl {
        
-    public String calcMazeMath(double userNumber, double userAnswer){
+    public static String calcMazeMath(double userNumber, double userAnswer)
+                            throws MazeControlException{
     
         if (userNumber < 1 || userAnswer < 3.16 || userNumber > 50) {
-            return "Error";
+            throw new MazeControlException("Incorrect the number you entered is\n"
+                                         + "invalid or is not the right answer. Please enter your number again.");
         }
         
         double multTen = userNumber * 10;
         double squareRt = Math.sqrt(multTen);
        double correctAnswer = Math.round(squareRt *100)/100.0;
-        
-        //double almostCorrect = Math.sqrt((10*userNumber));
-        
-        //double correctAnswer = Math.round(almostCorrect/100.0)*100.0;
-        
-   //     double almostAnswer = Math.sqrt((userNumber*2));
-   //     double correctAnswer = Math.round((almostAnswer/100)*100.0);
-        
-        
+          
         if (userAnswer == correctAnswer ){
             return "Correct";
             

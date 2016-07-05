@@ -28,6 +28,7 @@ public class MainMenuView extends View {
                 + "\nS - Save game"
                 + "\nV - Goblet"
                 + "\nL - Lock"
+                + "\nM - Maze"
                 + "\nQ - Quit"
                 + "\n -----------------------------"
                 + "\nPlease enter the Letter");
@@ -55,8 +56,11 @@ public class MainMenuView extends View {
             case "V": // display goblet problem
                 this.gobletMath();
                 break;
-            case "L": // display goblet problem
+            case "L": // display Door Lock problem
                 this.lockMath();
+                break;
+            case "M": // display Maze problem
+                this.mazeMath();
                 break;
             default:
                 System.out.println("\nInvalid selection. Try again");
@@ -106,7 +110,10 @@ public class MainMenuView extends View {
     private void lockMath() {
         LockControlView lockControlView = new LockControlView();
         lockControlView.display();
-
     }
 
+     private void mazeMath() {
+        MazeControlView mazeControlView = new MazeControlView();
+        mazeControlView.display();
+    }
 }
