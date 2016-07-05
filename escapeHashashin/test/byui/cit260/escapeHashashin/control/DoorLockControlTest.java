@@ -5,6 +5,7 @@
  */
 package byui.cit260.escapeHashashin.control;
 
+import byui.cit260.escapeHashashin.exceptions.DoorLockControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class DoorLockControlTest {
      * Test of computeAnswer method, of class DoorLockControl.
      */
     @Test
-    public void testComputeAnswer() {
+    public void testComputeAnswer() throws DoorLockControlException {
         System.out.println("Test Case #1");
         double voltage = 10.0;
         double resistance = 4.0;
