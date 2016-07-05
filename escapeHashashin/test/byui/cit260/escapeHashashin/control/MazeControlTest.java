@@ -5,6 +5,7 @@
  */
 package byui.cit260.escapeHashashin.control;
 
+import byui.cit260.escapeHashashin.exceptions.MazeControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -21,7 +22,7 @@ public class MazeControlTest {
      * Test of calcMazeMath method, of class MazeControl.
      */
     @Test
-    public void testCalcMazeMath() {
+    public void testCalcMazeMath() throws MazeControlException {
         System.out.println("Test Case 1");
         double userNumber = 22;
         double userAnswer = 14.83;
