@@ -65,7 +65,7 @@ public class MazeControlView extends View{
             if (MazeControl.calcMazeMath(userNumber, userAnswer) == "Correct"){
                 return true;
             }
-            else{
+            else if (MazeControl.calcMazeMath(userNumber, userAnswer) == "Incorrect") {
                 return false;   
             }
         } catch (MazeControlException ex) {
