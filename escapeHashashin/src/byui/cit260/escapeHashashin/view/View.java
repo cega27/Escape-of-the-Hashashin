@@ -7,8 +7,11 @@ package byui.cit260.escapeHashashin.view;
 
 import escapehashashin.EscapeHashashin;
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -47,14 +50,18 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
+     
+        String value = null; // value to be returned
         boolean valid = false; // initialize to not valid
 
         while (!valid) { //loop while an invlid value is entered
             System.out.println("\n" + this.displayMessage);
 
-            value = keyboard.nextLine(); // get next line typed on keyboard
+            try {
+                value = this.keyboard.readLine(); // get next line typed on keyboard
+            } catch (IOException ex) {
+                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+            }
             value = value.trim(); //trim off leading and trailing blanks
 
             if (value.length() < 1) { // value is blank
