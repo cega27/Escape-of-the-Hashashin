@@ -43,7 +43,7 @@ public class ConversationMenuView extends View {
                 this.displayResponse(value);
                 break; 
             default:  
-                System.out.println("\nInvalid selection. Try again");
+                ErrorView.display(this.getClass().getName(),"\nInvalid selection. Try again");
                 break;
         }
         return false;
@@ -51,6 +51,6 @@ public class ConversationMenuView extends View {
     
     private void displayResponse(String responseNo) {
         String message = GameControl.getResponse(responseNo);
-        System.out.println("\n" + message);
+        this.console.println("\n" + message);
     }    
 }

@@ -55,17 +55,17 @@ public abstract class View implements ViewInterface {
         boolean valid = false; // initialize to not valid
 
         while (!valid) { //loop while an invlid value is entered
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
 
             try {
                 value = this.keyboard.readLine(); // get next line typed on keyboard
             } catch (IOException ex) {
-                Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+                this.console.println(ex.getMessage());
             }
             value = value.trim(); //trim off leading and trailing blanks
 
             if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value: value can not be blank");
                 continue;
             }
             break; //end loop

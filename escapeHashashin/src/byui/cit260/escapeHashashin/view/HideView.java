@@ -36,7 +36,7 @@ public class HideView extends View{
                 this.closet();
                 break;
             default:
-                System.out.println("\nInvalid selection. Try again");
+                ErrorView.display(this.getClass().getName(),"\nInvalid selection. Try again");
                 break;
         }
         return false;

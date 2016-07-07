@@ -21,7 +21,7 @@ public class MazeControlView extends View{
     private String promptUserAnswer;
     public MazeControlView() {
       
-        System.out.println("\nWelcome to the Royal Gardens!\n"
+        this.console.println("\nWelcome to the Royal Gardens!\n"
                          + "In front of you there is the Grand Maze believed to be the\n"
                          + "most difficult maze ever created. But don't give up just yet.\n"
                          + "At the entrance of the maze, there is a chest with a map to the\n"
@@ -69,7 +69,7 @@ public class MazeControlView extends View{
                 return false;   
             }
         } catch (MazeControlException ex) {
-           System.out.println(ex.getMessage());
+           this.console.println(ex.getMessage());
         }  
         return true;   
     }
