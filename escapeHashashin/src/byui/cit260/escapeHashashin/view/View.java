@@ -5,6 +5,9 @@
  */
 package byui.cit260.escapeHashashin.view;
 
+import escapehashashin.EscapeHashashin;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 /**
@@ -14,6 +17,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
 
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = EscapeHashashin.getInFile();
+    protected final PrintWriter console = EscapeHashashin.getOutFile();
 
     public View() {
     }
