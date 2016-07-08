@@ -148,5 +148,21 @@ public class GameControl {
     
         return treasure;
     }
+    
+    public enum KeyInventory{
+     cooksKey;
+     }
+     
+    public static Item[] createKeyList(){
+     
+        Item[] key = new Item[1];
+        
+        Item cooksKey = new Item();
+        cooksKey.setDescription("Cook's Key");
+        cooksKey.setQuantityStock(0);
+        key[KeyInventory.cooksKey.ordinal()] = cooksKey;
+        
+        return key;
+     }
 
 }

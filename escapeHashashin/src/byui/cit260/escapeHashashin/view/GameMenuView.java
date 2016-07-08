@@ -184,7 +184,27 @@ public class GameMenuView extends View {
     }
 
     private void treasureInventory() {
-        System.out.println("\ntreasureInventory() function called");
+        StringBuilder line;
+
+        Game game = EscapeHashashin.getCurrentGame();
+        Item[] treasure = game.getItems();
+
+        System.out.println("\n Treasure Inventory Items");
+        line = new StringBuilder("                                   ");
+        line.insert(0, "Description");
+        line.insert(20, "In Stock");
+        System.out.println(line.toString());
+
+        //for each inventory item
+        for (Item item : treasure) {
+            line = new StringBuilder("                                ");
+            line.insert(0, item.getDescription());
+            line.insert(23, item.getQuantityStock());
+
+            // display the line
+            System.out.println(line.toString());
+               
+        }
     }
 
     private void keyInventory() {
