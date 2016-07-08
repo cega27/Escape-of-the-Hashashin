@@ -45,6 +45,12 @@ public class GameControl {
         // create the inventory list and save in the game
         Item[] inventoryList = GameControl.createInventoryList();
         game.setItems(inventoryList);
+        
+        Item[] treasureList = GameControl.createTreasureList();
+        game.setTreasures(treasureList);
+        
+        Item[] keyList = GameControl.createKeyList();
+        game.setKey(keyList);
 
         Map map = MapControl.createMap(); // create and initialize new map
         game.setMap(map); // save map in game
@@ -124,29 +130,29 @@ public class GameControl {
     
     public static Item[] createTreasureList(){
         
-        Item[] treasure = new Item[4];
+        Item[] treasures = new Item[4];
         
         Item kingsGoblet = new Item();
         kingsGoblet.setDescription("King's Goblet");
         kingsGoblet.setQuantityStock(0);
-        treasure[TreasureInventory.kingsGoblet.ordinal()] = kingsGoblet;
+        treasures[TreasureInventory.kingsGoblet.ordinal()] = kingsGoblet;
         
         Item royalCrown = new Item();
         royalCrown.setDescription("Royal Crown");
         royalCrown.setQuantityStock(0);
-        treasure[TreasureInventory.royalCrown.ordinal()] = royalCrown;
+        treasures[TreasureInventory.royalCrown.ordinal()] = royalCrown;
     
         Item crownJewels = new Item();
         crownJewels.setDescription("Crown Jewels");
         crownJewels.setQuantityStock(0);
-        treasure[TreasureInventory.crownJewels.ordinal()] = crownJewels;
+        treasures[TreasureInventory.crownJewels.ordinal()] = crownJewels;
         
         Item florentineDiamond = new Item();
         florentineDiamond.setDescription("Florentine Diamond");
         florentineDiamond.setQuantityStock(0);
-        treasure[TreasureInventory.florentineDiamond.ordinal()] = florentineDiamond;
+        treasures[TreasureInventory.florentineDiamond.ordinal()] = florentineDiamond;
     
-        return treasure;
+        return treasures;
     }
     
     public enum KeyInventory{

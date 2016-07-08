@@ -187,7 +187,7 @@ public class GameMenuView extends View {
         StringBuilder line;
 
         Game game = EscapeHashashin.getCurrentGame();
-        Item[] treasure = game.getItems();
+        Item[] treasures = game.getTreasures();
 
         System.out.println("\n Treasure Inventory Items");
         line = new StringBuilder("                                   ");
@@ -196,7 +196,7 @@ public class GameMenuView extends View {
         System.out.println(line.toString());
 
         //for each inventory item
-        for (Item item : treasure) {
+        for (Item item : treasures) {
             line = new StringBuilder("                                ");
             line.insert(0, item.getDescription());
             line.insert(23, item.getQuantityStock());
@@ -208,7 +208,26 @@ public class GameMenuView extends View {
     }
 
     private void keyInventory() {
-        System.out.println("\nkeyInventory() function called");
+          StringBuilder line;
+
+        Game game = EscapeHashashin.getCurrentGame();
+        Item[] key = game.getKey();
+
+        System.out.println("\n Key Inventory Items");
+        line = new StringBuilder("                                   ");
+        line.insert(0, "Description");
+        line.insert(20, "In Stock");
+        System.out.println(line.toString());
+
+        //for each inventory item
+        for (Item item : key) {
+            line = new StringBuilder("                                ");
+            line.insert(0, item.getDescription());
+            line.insert(23, item.getQuantityStock());
+
+            // display the line
+            System.out.println(line.toString());
+        }
     }
 
     public void displayGameMenuView() {

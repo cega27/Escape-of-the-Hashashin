@@ -20,6 +20,8 @@ public class Game implements Serializable {
     private Character character;
     private Map map;
     private Item[] items;
+    private Item[] treasures;
+    private Item[] key; 
 
    
 //    public class Map implements Serializable {
@@ -118,7 +120,23 @@ public class Game implements Serializable {
         return items;
     }
 
-    public void setCharacter(java.lang.Character character) {
-        System.out.println("setCharacter() called in Game class");
+    public Item[] getTreasures() {
+        return treasures;
     }
+
+    public void setTreasures(Item[] treasures) {
+        this.treasures = treasures;
+    }
+
+    public Item[] getKey() {
+        return key;
+    }
+
+    public void setKey(Item[] key) {
+        this.key = key;
+    }
+    
+    
+    
+    
 }
