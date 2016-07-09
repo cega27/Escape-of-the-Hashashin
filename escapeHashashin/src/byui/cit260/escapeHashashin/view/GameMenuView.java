@@ -36,6 +36,7 @@ public class GameMenuView extends View {
                 + "\nL - Save Game"
                 + "\nZ - Weapons Inventory"
                 + "\nX - Treasure Inventory"
+                        +"\nB - Character List"
                 + "\nC - Key Inventory"
                 + "\nQ - Quit"
                 + "\n -----------------------------"
@@ -82,11 +83,15 @@ public class GameMenuView extends View {
             case "X": //save the current game
                 this.treasureInventory();
                 break;
+            case "B": //sa
+                this.characterList();
+                break;
             case "C": //sa
                 this.keyInventory();
                 break;
+
             default:
-                ErrorView.display(this.getClass().getName(),"\nInvalid selection. Try again");
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection. Try again");
                 break;
         }
         return true;
@@ -126,22 +131,18 @@ public class GameMenuView extends View {
         map = EscapeHashashin.getCurrentGame().getMap();
 
         Location[][] locations = map.getLocations();
-       this.console.print("\n Escape Of the Hashashin \n");
-        this.console.printf("%-3.5s %-4.5s %-4.5s %-4.5s %-4.5s %-4.5s \n", " ", "0 ", "1 ", "2 ","3 ","4"); 
-       
-                
+        this.console.print("\n Escape Of the Hashashin \n");
+        this.console.printf("%-3.5s %-4.5s %-4.5s %-4.5s %-4.5s %-4.5s \n", " ", "0 ", "1 ", "2 ", "3 ", "4");
+
         for (int i = 0; i < locations.length; i++) {
             this.console.print("\n" + String.valueOf(i) + " | ");
-            for(int k = 0; k < locations[i].length; k++) {
-                
+            for (int k = 0; k < locations[i].length; k++) {
+
                 this.console.print(locations[i][k].getScene().getDisplaySymbol() + " | ");
-                
+
             }
-            
-            
+
             this.console.println(" ");
-                    
-            
 
         }
 
@@ -159,16 +160,14 @@ public class GameMenuView extends View {
         this.console.println("\n\nEnter the file path for the file where the game"
                 + "is to be saved.");
         String filePath = this.getInput();
-        
+
         try {
             //save the game to the specified file
             GameControl.saveGame(EscapeHashashin.getCurrentGame(), filePath);
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
 
-        
     }
 
     private void Inventory() {
@@ -216,17 +215,17 @@ public class GameMenuView extends View {
 
             // display the line
             System.out.println(line.toString());
-               
+
         }
     }
 
     private void keyInventory() {
-          StringBuilder line;
+        StringBuilder line;
 
         Game game = EscapeHashashin.getCurrentGame();
         Item[] key = game.getKey();
 
-        System.out.println("\n Key Inventory Items");
+        this.console.println("\n Key Inventory Items");
         line = new StringBuilder("                                   ");
         line.insert(0, "Description");
         line.insert(20, "In Stock");
@@ -240,6 +239,31 @@ public class GameMenuView extends View {
 
             // display the line
             System.out.println(line.toString());
+        }
+    }
+
+    public void characterList() {
+
+        StringBuilder line;
+
+        Game game = EscapeHashashin.getCurrentGame();
+        Item[] character = game.getCharacters();
+
+        System.out.println("\n Character Locations");
+        line = new StringBuilder("                                   ");
+        line.insert(0, "Description");
+        line.insert(20, "Location");
+        this.console.println(line.toString());
+
+        //for each inventory item
+        for (Item list : character) {
+            line = new StringBuilder("                                ");
+            line.insert(0, list.getDescription());
+            line.insert(23, list.getSpot());
+
+            // display the line
+            System.out.println(line.toString());
+
         }
     }
 

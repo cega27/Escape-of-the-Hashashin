@@ -19,6 +19,24 @@ public class Item implements Serializable {
     private String description;
     private Game game;
     private Location[] location;
+    private Character[] character;
+    private String spot;
+
+    public String getSpot() {
+        return spot;
+    }
+
+    public void setSpot(String spot) {
+        this.spot = spot;
+    }
+
+    public Character[] getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character[] character) {
+        this.character = character;
+    }
 
     public Game getGame() {
         return game;
@@ -35,6 +53,8 @@ public class Item implements Serializable {
     public void setLocation(Location[] location) {
         this.location = location;
     }
+    
+    
 
     public Item() {
     }
@@ -96,5 +116,7 @@ public class Item implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    
 
 }

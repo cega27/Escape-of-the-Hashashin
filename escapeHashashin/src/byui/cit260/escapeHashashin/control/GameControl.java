@@ -54,10 +54,10 @@ public class GameControl {
         // create the inventory list and save in the game
         Item[] inventoryList = GameControl.createInventoryList();
         game.setItems(inventoryList);
-        
+
         Item[] treasureList = GameControl.createTreasureList();
         game.setTreasures(treasureList);
-        
+
         Item[] keyList = GameControl.createKeyList();
         game.setKey(keyList);
 
@@ -72,8 +72,6 @@ public class GameControl {
         System.out.println("startSavedGame() called");
     }
 
-    
-
     public static void searchRoom(Player player) {
         System.out.println("searchRoom() called in GameControl class");
     }
@@ -87,7 +85,6 @@ public class GameControl {
         try (FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
             Object game = null;
-            
 
             output.writeObject(game); // write the game object out to file
         } catch (Exception e) {
@@ -155,54 +152,97 @@ public class GameControl {
         return inventory;
 
     }
-    public enum TreasureInventory{
-    kingsGoblet,
-    royalCrown,
-    crownJewels,
-    florentineDiamond;
+
+    public enum TreasureInventory {
+        kingsGoblet,
+        royalCrown,
+        crownJewels,
+        florentineDiamond;
     }
-    
-    public static Item[] createTreasureList(){
-        
+
+    public static Item[] createTreasureList() {
+
         Item[] treasures = new Item[4];
-        
+
         Item kingsGoblet = new Item();
         kingsGoblet.setDescription("King's Goblet");
         kingsGoblet.setQuantityStock(0);
         treasures[TreasureInventory.kingsGoblet.ordinal()] = kingsGoblet;
-        
+
         Item royalCrown = new Item();
         royalCrown.setDescription("Royal Crown");
         royalCrown.setQuantityStock(0);
         treasures[TreasureInventory.royalCrown.ordinal()] = royalCrown;
-    
+
         Item crownJewels = new Item();
         crownJewels.setDescription("Crown Jewels");
         crownJewels.setQuantityStock(0);
         treasures[TreasureInventory.crownJewels.ordinal()] = crownJewels;
-        
+
         Item florentineDiamond = new Item();
         florentineDiamond.setDescription("Florentine Diamond");
         florentineDiamond.setQuantityStock(0);
         treasures[TreasureInventory.florentineDiamond.ordinal()] = florentineDiamond;
-    
+
         return treasures;
     }
-    
-    public enum KeyInventory{
-     cooksKey;
-     }
-     
-    public static Item[] createKeyList(){
-     
+
+    public enum KeyInventory {
+        cooksKey;
+    }
+
+    public static Item[] createKeyList() {
+
         Item[] key = new Item[1];
-        
+
         Item cooksKey = new Item();
         cooksKey.setDescription("Cook's Key");
         cooksKey.setQuantityStock(0);
         key[KeyInventory.cooksKey.ordinal()] = cooksKey;
-        
+
         return key;
-     }
+    }
+
+    public enum Characters {
+        cook,//("Chubby in appearance, the gifted chef/baker can do wonders with spice."),
+        sirEdmand,//("The heir to a crown north of the land who has brought his daughter to wed the prince."),
+        generalBarathian,//("Head of the guard for the king."),
+        jaimie,//("In charge of relations of the kingdom. He makes his goal to meet as many people as possible."),
+        queenAlice,//("The king's kind and mistreated wife. She may be kind and help you along");
+
+    }
+
+    public static Item[] createCharacterList() {
+
+        Item[] character = new Item[1];
+
+        Item cook = new Item();
+        cook.setDescription("Cook");
+        cook.setSpot("5,2");
+        character[Characters.cook.ordinal()] = cook;
+
+        Item sirEdmand = new Item();
+        sirEdmand.setDescription("Sir Edmand");
+        sirEdmand.setSpot("4,2");
+        character[Characters.sirEdmand.ordinal()] = sirEdmand;
+
+        Item generalBarathian = new Item();
+        generalBarathian.setDescription("General Barathian");
+        generalBarathian.setSpot("2,2");
+        character[Characters.generalBarathian.ordinal()] = generalBarathian;
+
+        Item jaimie = new Item();
+        jaimie.setDescription("jaimie");
+        jaimie.setSpot("1,5");
+        character[Characters.jaimie.ordinal()] = jaimie;
+
+        Item queenAlice = new Item();
+        queenAlice.setDescription("Cook's Key");
+        queenAlice.setSpot("0,5");
+        character[Characters.queenAlice.ordinal()] = queenAlice;
+
+        return character;
+
+    }
 
 }

@@ -22,6 +22,15 @@ public class Game implements Serializable {
     private Item[] items;
     private Item[] treasures;
     private Item[] key; 
+    private Item[] characters;
+
+    public Item[] getCharacters() {
+        return characters;
+    }
+
+    public void setCharacters(Item[] characters) {
+        this.characters = characters;
+    }
 
    
 //    public class Map implements Serializable {
