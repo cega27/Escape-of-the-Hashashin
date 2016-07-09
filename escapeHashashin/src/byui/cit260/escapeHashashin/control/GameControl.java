@@ -5,14 +5,23 @@
  */
 package byui.cit260.escapeHashashin.control;
 
+import byui.cit260.escapeHashashin.exceptions.GameControlException;
 import byui.cit260.escapeHashashin.model.Game;
 import byui.cit260.escapeHashashin.model.Item;
 import byui.cit260.escapeHashashin.model.Map;
 import byui.cit260.escapeHashashin.model.Player;
 import byui.cit260.escapeHashashin.model.Scene;
+import byui.cit260.escapeHashashin.view.ErrorView;
+import byui.cit260.escapeHashashin.view.GameMenuView;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import byui.cit260.escapeHashashin.view.View;
 import escapehashashin.EscapeHashashin;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.Collections;
-
 
 /**
  *
@@ -55,37 +64,64 @@ public class GameControl {
         Map map = MapControl.createMap(); // create and initialize new map
         game.setMap(map); // save map in game
 
-       
         EscapeHashashin.setCurrentGame(game); // save in EscapeHashashin
 
     }
 
-    public static void startExistingGame(Game currentGame) {
-        System.out.println("\nstartExistingGame() called");
+    public void startSavedGame(Game currentGame) {
+        System.out.println("startSavedGame() called");
     }
 
-    public static void saveGame(Player player) {
-        System.out.println("\nsaveGame() called");
-    }
+    
 
     public static void searchRoom(Player player) {
         System.out.println("searchRoom() called in GameControl class");
     }
 
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
-       System.out.println("assignScenesToLocations() called");
+        System.out.println("assignScenesToLocations() called");
     }
 
-    
-    public enum InventoryItem{
-    brokenGlass,
-    dagger,
-    arrowTip,
-    heavyRock,
-    smallChain;
+    public static void saveGame(Game currentGame, String filePath)
+            throws GameControlException {
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            Object game = null;
+            
+
+            output.writeObject(game); // write the game object out to file
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
     }
-    
-    
+
+    public static void getSavedGame(String filePath)
+            throws GameControlException {
+
+        Game game = null;
+
+        try (
+                FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+
+            game = (Game) input.readObject(); //read the game object from file
+
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+
+        //close the output file
+        EscapeHashashin.setCurrentGame(game); // save in EscapeHashashin
+
+    }
+
+    public enum InventoryItem {
+        brokenGlass,
+        dagger,
+        arrowTip,
+        heavyRock,
+        smallChain;
+    }
 
     public static Item[] createInventoryList() {
         // created array(list) of inventory items
@@ -115,11 +151,9 @@ public class GameControl {
         smallChain.setDescription("Small Chain");
         smallChain.setQuantityStock(0);
         inventory[InventoryItem.smallChain.ordinal()] = smallChain;
-        
-        
 
         return inventory;
-        
+
     }
     public enum TreasureInventory{
     kingsGoblet,

@@ -69,7 +69,8 @@ public class EscapeHashashin {
 
     public static void main(String[] args) {
 
-        StartProgramView startProgramView = new StartProgramView();
+        
+        
         try {
 
             EscapeHashashin.inFile
@@ -79,12 +80,13 @@ public class EscapeHashashin {
             String filePath = "log.txt";
             EscapeHashashin.logFile = new PrintWriter(filePath);
             
+            StartProgramView startProgramView = new StartProgramView();
+             startProgramView.display();
             
-            startProgramView.display();
         } catch (Throwable te) {
             System.out.println(te.getMessage());
             te.printStackTrace();
-            startProgramView.display();
+            
         } finally {
             try {
                 if (EscapeHashashin.inFile != null) {
@@ -97,6 +99,7 @@ public class EscapeHashashin {
                 System.out.println("Error closing files");
                 return;
             }
+            
             EscapeHashashin.outFile.close();
         }
 

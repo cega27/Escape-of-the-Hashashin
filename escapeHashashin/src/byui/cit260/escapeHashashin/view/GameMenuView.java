@@ -86,7 +86,7 @@ public class GameMenuView extends View {
                 this.keyInventory();
                 break;
             default:
-                System.out.println("\nInvalid selection. Try again");
+                ErrorView.display(this.getClass().getName(),"\nInvalid selection. Try again");
                 break;
         }
         return true;
@@ -126,20 +126,20 @@ public class GameMenuView extends View {
         map = EscapeHashashin.getCurrentGame().getMap();
 
         Location[][] locations = map.getLocations();
-        System.out.print("\n Escape Of the Hashashin \n");
-        System.out.printf("%-3.5s %-4.5s %-4.5s %-4.5s %-4.5s %-4.5s \n", " ", "0 ", "1 ", "2 ","3 ","4"); 
+       this.console.print("\n Escape Of the Hashashin \n");
+        this.console.printf("%-3.5s %-4.5s %-4.5s %-4.5s %-4.5s %-4.5s \n", " ", "0 ", "1 ", "2 ","3 ","4"); 
        
                 
         for (int i = 0; i < locations.length; i++) {
-            System.out.print("\n" + String.valueOf(i) + " | ");
+            this.console.print("\n" + String.valueOf(i) + " | ");
             for(int k = 0; k < locations[i].length; k++) {
                 
-                System.out.print(locations[i][k].getScene().getDisplaySymbol() + " | ");
+                this.console.print(locations[i][k].getScene().getDisplaySymbol() + " | ");
                 
             }
             
             
-            System.out.println(" ");
+            this.console.println(" ");
                     
             
 
@@ -155,7 +155,20 @@ public class GameMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("\nsaveGame() function called");
+        //prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file path for the file where the game"
+                + "is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            //save the game to the specified file
+            GameControl.saveGame(EscapeHashashin.getCurrentGame(), filePath);
+        }
+        catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+
+        
     }
 
     private void Inventory() {
@@ -164,11 +177,11 @@ public class GameMenuView extends View {
         Game game = EscapeHashashin.getCurrentGame();
         Item[] inventory = game.getItems();
 
-        System.out.println("\n Weapon Inventory Items");
+        this.console.println("\n Weapon Inventory Items");
         line = new StringBuilder("                                   ");
         line.insert(0, "Description");
         line.insert(20, "In Stock");
-        System.out.println(line.toString());
+        this.console.println(line.toString());
 
         //for each inventory item
         for (Item item : inventory) {
@@ -177,7 +190,7 @@ public class GameMenuView extends View {
             line.insert(23, item.getQuantityStock());
 
             // display the line
-            System.out.println(line.toString());
+            this.console.println(line.toString());
 
         }
 

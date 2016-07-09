@@ -23,9 +23,8 @@ public class MainMenuView extends View {
                 + "\n| Main Menu                   "
                 + "\n -----------------------------"
                 + "\nN - Start new game"
-                + "\nG - Get and start saved game"
+                + "\nG - Start saved game"
                 + "\nH - Get help on how to play the game"
-                + "\nS - Save game"
                 + "\nV - Goblet"
                 + "\nL - Lock"
                 + "\nM - Maze"
@@ -45,14 +44,12 @@ public class MainMenuView extends View {
                 this.startNewGame();
                 break;
             case "G": //get and start an existing game
-                this.startExistingGame();
+                this.startSavedGame();
                 break;
             case "H": // display the help menu
                 this.displayHelpMenu();
                 break;
-            case "S": //save the current game
-                this.saveGame();
-                break;
+            
             case "V": // display goblet problem
                 this.gobletMath();
                 break;
@@ -63,7 +60,7 @@ public class MainMenuView extends View {
                 this.mazeMath();
                 break;
             default:
-                System.out.println("\nInvalid selection. Try again");
+                ErrorView.display(this.getClass().getName(),"\nInvalid selection. Try again");
                 break;
         }
         return false;
@@ -86,8 +83,23 @@ public class MainMenuView extends View {
          */
     }
 
-    private void startExistingGame() {
-        System.out.println("startExistingGame() function called");
+    private void startSavedGame() {
+        //prompt for and get the name of the file to sae the game in
+        this.console.println("\n\nEnter the file path for the file where the game"
+                + "is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try{
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
+        
+
     }
 
     private void displayHelpMenu() {
@@ -97,10 +109,7 @@ public class MainMenuView extends View {
         helpMenu.display();
     }
 
-    private void saveGame() {
-        System.out.println("saveGame() function called");
-
-    }
+    
 
     private void gobletMath() {
         GobletView gobletView = new GobletView();

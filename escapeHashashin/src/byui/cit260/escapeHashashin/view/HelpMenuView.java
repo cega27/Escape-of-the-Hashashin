@@ -23,6 +23,7 @@ public class HelpMenuView extends View{
                 + "\nM - How to move"
                 + "\nE - Using objects"
                 + "\nR - Complex puzzles"
+                +     "\nQ - Quit"
                 + "\n -----------------------------"
                 + "\nPlease enter the Letter");
 
@@ -44,7 +45,7 @@ public class HelpMenuView extends View{
                 this.complexPuzzles();
                 break;
             default:
-                System.out.println("\nInvalid selection. Try again");
+                ErrorView.display(this.getClass().getName(),"\nInvalid selection. Try again");
                 break;
         }
         return false;

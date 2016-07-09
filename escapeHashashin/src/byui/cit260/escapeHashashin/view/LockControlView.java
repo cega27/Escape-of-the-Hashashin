@@ -29,7 +29,7 @@ public class LockControlView extends View {
 
     public LockControlView() {
       
-        System.out.println("\nThis door is locked, to be able to use the key you have, you must from select a number from 10 to \n"
+        this.console.println("\nThis door is locked, to be able to use the key you have, you must from select a number from 10 to \n"
                 + "provide it with enough power for the lock to work. You will be promt for a number 'V' which\n"
                 + "will represent the voltage, then another number 'R' from 1 to 10 which will represent the resistance.\n"
                 + "Lastly the last number you will be prompted for is the answer 'P' of the equation using the numbers you have\n"
@@ -76,7 +76,7 @@ public class LockControlView extends View {
             String results = DoorLockControl.computeAnswer(voltage, resistance, uAnswer);
         } 
         catch (DoorLockControlException ex) {
-            System.out.println(ex.getMessage());
+            this.console.println(ex.getMessage());
         }
         
         return true;
