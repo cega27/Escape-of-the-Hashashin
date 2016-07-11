@@ -36,8 +36,8 @@ public class GameMenuView extends View {
                 + "\nL - Save Game"
                 + "\nZ - Weapons Inventory"
                 + "\nX - Treasure Inventory"
-                        +"\nB - Character List"
                 + "\nC - Key Inventory"
+                + "\nB - Character List"
                 + "\nQ - Quit"
                 + "\n -----------------------------"
                 + "\nPlease enter the Letter");
@@ -83,13 +83,12 @@ public class GameMenuView extends View {
             case "X": //save the current game
                 this.treasureInventory();
                 break;
-            case "B": //sa
-                this.characterList();
-                break;
             case "C": //sa
                 this.keyInventory();
                 break;
-
+            case "B": //sa
+                this.characterList();
+                break;
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection. Try again");
                 break;
@@ -120,7 +119,7 @@ public class GameMenuView extends View {
     }
 
     private void playerAssassinate() {
-        System.out.println("\nplayerAssassinate() function called");
+        this.console.println("\nYou have successfuly snuck behind a random guard. Your move is quick and he falls silently. You drag his body into the shadows.");
     }
 
     private void displayMap() {
@@ -256,13 +255,13 @@ public class GameMenuView extends View {
         this.console.println(line.toString());
 
         //for each inventory item
-        for (Item list : character) {
+        for (Item item : character) {
             line = new StringBuilder("                                ");
-            line.insert(0, list.getDescription());
-            line.insert(23, list.getSpot());
+            line.insert(0, item.getDescription());
+            line.insert(23, item.getSpot());
 
             // display the line
-            System.out.println(line.toString());
+            this.console.println(line.toString());
 
         }
     }
