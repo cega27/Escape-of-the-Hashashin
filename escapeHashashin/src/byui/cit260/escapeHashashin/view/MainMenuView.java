@@ -109,8 +109,6 @@ public class MainMenuView extends View {
         helpMenu.display();
     }
 
-    
-
     private void gobletMath() {
         GobletView gobletView = new GobletView();
         gobletView.display();

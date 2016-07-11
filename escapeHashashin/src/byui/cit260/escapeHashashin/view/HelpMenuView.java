@@ -52,11 +52,19 @@ public class HelpMenuView extends View{
     }
 
     private void goalOfGame() {
-        System.out.println("\ngoalOfGame() called");
+        System.out.println("\n -------------------------GOAL OF THE GAME----------------------------------"
+                         + "\n| The game starts at the King's room where your Hashashin just killed       |"
+                         + "\n| the evil king.                                                            |"
+                         + "\n| The Goal of the game is to help your Hashashin escape from the castle     |"
+                         + "\n| without being caught and killed. You will interact with different people, |"
+                         + "\n| and in every instance ypu will be given the opportunity choose what to do |"
+                         + "\n| next. Be wise at choosing what to do next because every decision you make |"
+                         + "\n| will either help you scape or  get you killed. Good Luck!                 |"
+                         + "\n ---------------------------------------------------------------------------");
     }
 
     private void howToMove() {
-        System.out.println("\nhowToMove() called");
+        System.out.println("\n| In the game you will be given different options to ");
     }
 
     private void complexPuzzles() {
