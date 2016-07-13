@@ -25,11 +25,8 @@ public class GameMenuView extends View {
                 "\n -----------------------------"
                 + "\n| Game Menu                   "
                 + "\n -----------------------------"
-                + "\nA - Advance Forward"
-                + "\nS - Go Back"
+                + "\nA - Begin Journey"
                 + "\nD - Hide"
-                + "\nF - Right Room"
-                + "\nG - Left Room"
                 + "\nH - Assassinate"
                 + "\nJ - Map"
                 + "\nK - Search Room"
@@ -51,20 +48,10 @@ public class GameMenuView extends View {
 
         switch (value) {
             case "A": //create and start a new game
-                this.advanceForward();
-                break;
-            case "S": //get and start an existing game
-                this.goBack();
+                this.begin();
                 break;
             case "D": // display the help menu
                 this.playerHide();
-                break;
-            case "F": //save the current game
-                this.rightRoom();
-                break;
-            case "G": //create and start a new game
-                this.leftRoom();
-                break;
             case "H": //get and start an existing game
                 this.playerAssassinate();
                 break;
@@ -97,25 +84,14 @@ public class GameMenuView extends View {
 
     }
 
-    private void advanceForward() {
-        System.out.println("\nadvanceForward() function called");
-    }
-
-    private void goBack() {
-        System.out.println("\ngoBack() function called");
+    private void begin() {
+        BeginView beginView = new BeginView();
+        beginView.display();
     }
 
     private void playerHide() {
         HideView hideView = new HideView();
         hideView.display();
-    }
-
-    private void rightRoom() {
-        System.out.println("\nrightRoom() function called");
-    }
-
-    private void leftRoom() {
-        System.out.println("\nleftRoom() function called");
     }
 
     private void playerAssassinate() {

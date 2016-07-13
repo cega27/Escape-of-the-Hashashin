@@ -45,6 +45,8 @@ public class GameControl {
         System.out.println("\n *** getResponse() called ***");
         return "";
     }
+    
+    
 
     public static void createNewGame(Player player) {
 
