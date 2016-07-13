@@ -17,14 +17,14 @@ public class HelpMenuView extends View{
 
     public HelpMenuView() {
              super("\n ------------------------------"
-                + "\n| Help Menu                  |"
-                + "\n ------------------------------"
+                + "\n|         HELP MENU             |"
+                + "\n -------------------------------"
                 + "\nG - What is the goal of the game?"
                 + "\nM - How to play"
                 + "\nE - Using objects"
                 + "\nR - Complex puzzles"
                 +     "\nQ - Quit"
-                + "\n -----------------------------"
+                + "\n -------------------------------"
                 + "\nPlease enter the Letter");
 
     }
@@ -75,8 +75,11 @@ public class HelpMenuView extends View{
     }
 
     private void complexPuzzles() {
-        System.out.println("\n ------------------------COMPLEX PUZZLES------------------------"
-                         + "\n| ");
+        System.out.println("\n ------------------------COMPLEX PUZZLES-------------------------"
+                         + "\n| At different locations in your game you will encounter puzzles |"
+                         + "\n| or problems that will test your math skills. You will be asked |"
+                         + "\n| to enter numbers and then solve the aquation with the numbers  |"
+                         + "\n| you have etered.                                               |");
     }
 
 }
