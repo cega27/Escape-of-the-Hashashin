@@ -20,7 +20,7 @@ public class HelpMenuView extends View{
                 + "\n| Help Menu                  |"
                 + "\n ------------------------------"
                 + "\nG - What is the goal of the game?"
-                + "\nM - How to move"
+                + "\nM - How to play"
                 + "\nE - Using objects"
                 + "\nR - Complex puzzles"
                 +     "\nQ - Quit"
@@ -38,7 +38,7 @@ public class HelpMenuView extends View{
             case "G": //create and start a new game
                 this.goalOfGame();
                 break;
-            case "E": //get and start an existing game
+            case "M": //get and start an existing game
                 this.howToMove();
                 break;
             case "R": // display the help menu
@@ -64,11 +64,19 @@ public class HelpMenuView extends View{
     }
 
     private void howToMove() {
-        System.out.println("\n| In the game you will be given different options to ");
+        System.out.println("\n --------------------------HOW TO PLAY--------------------------"
+                         + "\n| In the game you will be given different options to choose     |"
+                         + "\n| what to do next. Each option will be represented by a letter  |"
+                         + "\n| Read each option and choose the letter that                   |"
+                         + "\n| represents your selection. The game is not case sensitive so  |"
+                         + "\n| you can enter the letters in lower case or upper case.        |"
+                         + "\n| Enjoy the game and good luck!                                 |"
+                         + "\n ---------------------------------------------------------------");
     }
 
     private void complexPuzzles() {
-        System.out.println("\ncomplexPuzzles() called");
+        System.out.println("\n ------------------------COMPLEX PUZZLES------------------------"
+                         + "\n| ");
     }
 
 }
