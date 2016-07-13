@@ -22,14 +22,16 @@ class WineCellarView extends View {
             + "\nV- Key Inventory "
             + "\n -----------------------------"
                 + "\n -----------------------------"
-            +"\nLibrary"
-            +"\nThis is the King's Study. All the knowledge in the"
-        + "\nland are within these walls. If you had the time you could "
-        + "\nlearn a great deal about the secrets of the Kingdom. Yet this" 
-        +"\nroom is of no use to you. The single door in front of you is to"
-        + "\nthe hallway."
+            +"\nWine Cellar"
+            +"\nWine Cellars are notorious for silent and cold spaces. You feel "
+            + "the hope of escape as this feeling reminds you of outside. You comb"
+            + " past racks full of bottles. Nothing. You check barrels at the very "
+            + "end but fail. You feel all is lost as you slide down the wall and sit "
+            + "on the cold ground. Through a gap you see a large crack in the wall. You "
+            + "investigate and pull the barrels out. You have found the lock."
                 + "\nA - Tunnel"
             + "\nB - Chef's Office"
+            + "\nC - Lock"
                 + "\nQ - Quit"
                 + "\n -----------------------------"
                 + "\nPlease enter the Letter");
@@ -55,6 +57,9 @@ class WineCellarView extends View {
             case "B":
                 this.chefsOffice();
                 break;
+            case "C":
+                this.lock();
+                break;
                 
                
             default:
@@ -74,5 +79,10 @@ class WineCellarView extends View {
     private void chefsOffice() {
        ChefsOfficeView chefsOfficeView = new ChefsOfficeView();
         chefsOfficeView.display();
+    }
+
+    private void lock() {
+        LockControlView lockControlView = new LockControlView();
+        lockControlView.display();
     }
 }

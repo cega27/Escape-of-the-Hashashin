@@ -21,15 +21,16 @@ class ThroneRoomView extends View {
             + "\nV- Key Inventory "
             + "\n -----------------------------"
                 + "\n -----------------------------"
-            +"\nLibrary"
-            +"\nThis is the King's Study. All the knowledge in the"
-        + "\nland are within these walls. If you had the time you could "
-        + "\nlearn a great deal about the secrets of the Kingdom. Yet this" 
-        +"\nroom is of no use to you. The single door in front of you is to"
-        + "\nthe hallway."
+            +"\nThrone Room"
+            +"\nThe Royal court of the evil King. Many of your friends have died"
+                + " unjustly in this chamber. Public beheadings and verocious dogs "
+                + "used to publicly kill. You may leave this chamber or try your hand "
+                + "with the puzzle to find the Holy Goblet."
                 + "\nA - Kitchen"
                 +"\nB - Hallway"
                 +"\nC - Bathroom"
+                + "\nD - Goblet"
+                
                 + "\nQ - Quit"
                 + "\n -----------------------------"
                 + "\nPlease enter the Letter");
@@ -50,6 +51,8 @@ class ThroneRoomView extends View {
                 this.hallway();
             case "C":
                 this.bathroom();
+            case "D":
+                this.goblet();
         
                 
             default:
@@ -75,6 +78,11 @@ class ThroneRoomView extends View {
         BathroomView bathroomView = new BathroomView();
         bathroomView.display();
            
+    }
+
+    private void goblet() {
+        GobletView gobletView = new GobletView();
+        gobletView.display();
     }
     
   }   
