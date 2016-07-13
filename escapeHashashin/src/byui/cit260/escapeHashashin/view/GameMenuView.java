@@ -25,19 +25,16 @@ public class GameMenuView extends View {
                 "\n -----------------------------"
                 + "\n| Game Menu                   "
                 + "\n -----------------------------"
-                + "\nA - Advance Forward"
-                + "\nS - Go Back"
+                + "\nA - Begin Journey"
                 + "\nD - Hide"
-                + "\nF - Right Room"
-                + "\nG - Left Room"
                 + "\nH - Assassinate"
                 + "\nJ - Map"
                 + "\nK - Search Room"
                 + "\nL - Save Game"
                 + "\nZ - Weapons Inventory"
                 + "\nX - Treasure Inventory"
-                        +"\nB - Character List"
                 + "\nC - Key Inventory"
+                + "\nB - Character List"
                 + "\nQ - Quit"
                 + "\n -----------------------------"
                 + "\nPlease enter the Letter");
@@ -51,20 +48,10 @@ public class GameMenuView extends View {
 
         switch (value) {
             case "A": //create and start a new game
-                this.advanceForward();
-                break;
-            case "S": //get and start an existing game
-                this.goBack();
+                this.begin();
                 break;
             case "D": // display the help menu
                 this.playerHide();
-                break;
-            case "F": //save the current game
-                this.rightRoom();
-                break;
-            case "G": //create and start a new game
-                this.leftRoom();
-                break;
             case "H": //get and start an existing game
                 this.playerAssassinate();
                 break;
@@ -83,13 +70,12 @@ public class GameMenuView extends View {
             case "X": //save the current game
                 this.treasureInventory();
                 break;
-            case "B": //sa
-                this.characterList();
-                break;
             case "C": //sa
                 this.keyInventory();
                 break;
-
+            case "B": //sa
+                this.characterList();
+                break;
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection. Try again");
                 break;
@@ -98,12 +84,9 @@ public class GameMenuView extends View {
 
     }
 
-    private void advanceForward() {
-        System.out.println("\nadvanceForward() function called");
-    }
-
-    private void goBack() {
-        System.out.println("\ngoBack() function called");
+    private void begin() {
+        BeginView beginView = new BeginView();
+        beginView.display();
     }
 
     private void playerHide() {
@@ -111,16 +94,8 @@ public class GameMenuView extends View {
         hideView.display();
     }
 
-    private void rightRoom() {
-        System.out.println("\nrightRoom() function called");
-    }
-
-    private void leftRoom() {
-        System.out.println("\nleftRoom() function called");
-    }
-
     private void playerAssassinate() {
-        System.out.println("\nplayerAssassinate() function called");
+        this.console.println("\nYou have successfuly snuck behind a random guard. Your move is quick and he falls silently. You drag his body into the shadows.");
     }
 
     private void displayMap() {
@@ -256,13 +231,13 @@ public class GameMenuView extends View {
         this.console.println(line.toString());
 
         //for each inventory item
-        for (Item list : character) {
+        for (Item item : character) {
             line = new StringBuilder("                                ");
-            line.insert(0, list.getDescription());
-            line.insert(23, list.getSpot());
+            line.insert(0, item.getDescription());
+            line.insert(23, item.getSpot());
 
             // display the line
-            System.out.println(line.toString());
+            this.console.println(line.toString());
 
         }
     }
