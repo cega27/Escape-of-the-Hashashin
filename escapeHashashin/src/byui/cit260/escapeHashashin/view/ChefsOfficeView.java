@@ -72,7 +72,7 @@ class ChefsOfficeView extends View {
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection. Try again");
                 break;
         }
-        return true;
+        return false;
 
     }
 
