@@ -60,9 +60,8 @@ public class MainHallView extends View {
     }
 
  private void barracks() {
-     System.out.println("\n --------------------------------------------"
-                      + "\n| Bad luck it seems like the door is locked! |"
-                      + "\n --------------------------------------------");
+       BaracksTwoView baracksTwoView = new BaracksTwoView();
+       baracksTwoView.display();
 }
 
  private void dance() {
@@ -73,7 +72,8 @@ public class MainHallView extends View {
 
 private void drink() {
      System.out.println("\n --------------------------------------------"
-                      + "\n| Bad luck it seems like the door is locked! |"
+                      + "\n| Bad luck! There is no more wine left!      |"
+                      + "\n| You wouldn't want to get drunk anyways.    |"
                       + "\n --------------------------------------------");
 }
 
