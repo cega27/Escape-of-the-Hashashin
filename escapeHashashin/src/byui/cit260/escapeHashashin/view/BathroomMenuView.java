@@ -48,15 +48,41 @@ public class BathroomMenuView extends View{
     }
 
     private void killDrunken() {
-         System.out.println("\nkillDrunken() called");
+         System.out.println("\n --------------------------------------------------"
+                          + "\n| The man made too much nosie when you killed him. |"
+                          + "\n| The noise alerted the gurdians, and now you are  |"
+                          + "\n| dead. Thanks for playing, Please Try Again       |"
+                          + "\n --------------------------------------------------");
+        
+         GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
     }
 
     private void takeCLothes() {
-         System.out.println("\ntakeClothes() called");
+         System.out.println("\n -------------------------------------------------------------"
+                          + "\n| As you take the man's clothes he seems to twich a little    |"
+                          + "\n| but he has drunken a lot and doesn't seem to wake up.       |"
+                          + "\n| With this new outfit you can walk around the castle with a  |"
+                          + "\n| little more freedom. Make sure to act properly and avoid    |"
+                          + "\n| getting caught. You can now go to the main hall and blend   |"
+                          + "\n| in with the people there.                                   |"
+                          + "\n -------------------------------------------------------------");
+         
+         MainHallView mainHallView = new MainHallView();
+         mainHallView.display();
+         
+         
     }
 
     private void leaveBathroom() {
-         System.out.println("\nleaveBathroom() called");
+         System.out.println("\n ------------------------------------------------------"
+                          + "\n| Oh no! It seems like you exited the bathroom too     |"
+                          + "\n| soon. The guards see and inmediately point their     |"
+                          + "\n| weapons at you leading to your surrending and        |"
+                          + "\n| encarcelation. Thanks for playing, please try again! |"
+                          + "\n ------------------------------------------------------");
+         GameMenuView gameMenuView = new GameMenuView();
+         gameMenuView.display();
     }
     
 }

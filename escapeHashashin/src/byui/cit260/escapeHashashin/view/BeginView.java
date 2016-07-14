@@ -34,11 +34,12 @@ public class BeginView extends View {
             + "\n -----------------------------"
                 + "\n -----------------------------"
             +"\nBegin"
-            +"\nCongratulations. You have killed the king."
-                + "No one has heard you and you only have one option: go through the door "
-                + "\nin front of you. This will lead you to the library which should be "
-                + "\nempty and quiet right now. Leave the dead King and run."
+                + "\n| Congratulations. You have killed the king.                              |"
+                + "\n| No one has heard you and you only have one option: You have two options |"
+                + "\n| in front of you. Choose what door to take, your selection will change   |"
+                + "\n| the outcomes of the game. Leave the dead King and run.                  |"
                 + "\nA - Library"
+                + "\nB - Hallway"
                 + "\nQ - Quit"
                 + "\n -----------------------------"
                 + "\nPlease enter the Letter");
@@ -46,18 +47,6 @@ public class BeginView extends View {
    
 }
     
-    
-
-
-
-
-
-
-
-
-
-
-
 @Override
     public boolean doAction(String value) {
 
@@ -67,7 +56,9 @@ public class BeginView extends View {
             case "A": //create and start a new game
                 this.library();
                 break;
-        
+            case "B": //create and start a new game
+                this.hallwayTwo();
+                break;
                
             default:
                 ErrorView.display(this.getClass().getName(), "\nInvalid selection. Try again");
@@ -77,10 +68,12 @@ public class BeginView extends View {
 
     }
 
-    
-
     private void library() {
         LibraryView libraryView = new LibraryView();
         libraryView.display();
+    }
+     private void hallwayTwo() {
+        HallwayTwoView hallwayTwoView = new HallwayTwoView();
+        hallwayTwoView.display();
     }
 }
