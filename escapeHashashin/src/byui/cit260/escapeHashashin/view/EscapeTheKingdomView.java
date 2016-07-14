@@ -10,26 +10,21 @@ package byui.cit260.escapeHashashin.view;
  * @author Garen
  */
 class EscapeTheKingdomView extends View {
-    
-    public EscapeTheKingdomView(){
-        
+
+    public EscapeTheKingdomView() {
+
         super("You hear the alarms being sound. You hear the cries of guards and the sceems"
-                + " of party guests. You have escaped without anyone knowing. "
-                + "Excellent Work.");
-        
-        
-        
+                + " \nof party guests. You have escaped without anyone knowing. "
+                + "\nExcellent Work.");
+
     }
 
-    
-    
     @Override
     public boolean doAction(String value) {
         this.console.print("The End");
-     
-return true;
-    
+
+        return true;
+
     }
-    
-    
+
 }
