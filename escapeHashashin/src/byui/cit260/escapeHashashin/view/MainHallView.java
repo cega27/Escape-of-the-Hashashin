@@ -65,9 +65,8 @@ public class MainHallView extends View {
 }
 
  private void dance() {
-     System.out.println("\n --------------------------------------------"
-                      + "\n| Bad luck it seems like the door is locked! |"
-                      + "\n --------------------------------------------");
+        LadyConversationView ladyConversationView = new LadyConversationView();
+        ladyConversationView.display();
 }
 
 private void drink() {

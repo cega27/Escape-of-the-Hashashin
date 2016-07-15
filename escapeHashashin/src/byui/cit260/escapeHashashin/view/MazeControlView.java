@@ -22,13 +22,14 @@ public class MazeControlView extends View{
     public MazeControlView() {
       
         this.console.println("\nWelcome to the Royal Gardens!\n"
-                         + "In front of you there is the Grand Maze believed to be the\n"
-                         + "most difficult maze ever created. But don't give up just yet.\n"
-                         + "At the entrance of the maze, there is a chest with a map to the\n"
-                         + "maze inside. To get the map you must solve the matematical\n"
-                         + "problem given to you. If you get the right answer you will get the\n"
-                         + "map that will lead you through the maze and outside the walls of\n"
-                         + "the castle. Good luck!\n");
+                         + "| In front of you there is the Grand Maze believed to be the         |\n"
+                         + "| most difficult maze ever created. But don't give up just yet.      |\n"
+                         + "| At the entrance of the maze, there is a chest with a map to the    |\n"
+                         + "| maze inside. To get the map you must solve the matematical         |\n"
+                         + "| problem given to you. If you get the right answer you will get the |\n"
+                         + "| map that will lead you through the maze and outside the walls of   |\n"
+                         + "| the castle. Good luck!                                             |\n"
+                         + " -------------------------------------------------------------------- \n");
         
         this.promptNumber
                 = "   ----------------------------------"
