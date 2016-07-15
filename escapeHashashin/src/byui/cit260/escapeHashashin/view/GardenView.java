@@ -63,8 +63,8 @@ public class GardenView extends View{
 }
 
     private void keys() {
-        MazeControlView mazeControlView = new MazeControlView();
-        mazeControlView.display();
+        MazeView mazeView = new MazeView();
+        mazeView.display();
     }
 
     private void rock() {

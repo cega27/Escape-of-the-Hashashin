@@ -9,9 +9,9 @@ package byui.cit260.escapeHashashin.view;
  *
  * @author carlos
  */
-public class LadyConv1View extends View{
+public class LadyConv3View extends View{
     
-     public LadyConv1View(){
+     public LadyConv3View(){
         
         super("\n -----------------------------"
                 + "\n| Game Menu                  "
@@ -24,8 +24,8 @@ public class LadyConv1View extends View{
                 + "\n -----------------------------"
             +"\nResponse"
                 + "\n ------------------------------------------------------------"
-                + "\n| Miss Ives looks at you, smiles and says:                   |"
-                + "\n| 'Every body is trying to scape from this place'            |"
+                + "\n| Miss Ives looks at you with a sarcastic look and says:     |"
+                + "\n| 'I'm sorry, but I am not looking for a husband'            |"
                 + "\n| As she walsk away she bumps into someone dropping a set of |"
                 + "\n| keys on the floor without she even noticing it.            |"
                 + "\n| You pick up the key and only hope one of them is the key   |"
@@ -83,7 +83,4 @@ public class LadyConv1View extends View{
     }
     
     
-    
-    
 }
-

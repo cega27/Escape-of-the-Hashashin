@@ -75,13 +75,13 @@ public class LadyConversationView extends View{
     }
 
     private void ResponseB() {
-        C4ResponseB c4ResponseB = new C4ResponseB();
-        c4ResponseB.display();
+        LadyConv2View ladyConv2View = new LadyConv2View();
+        ladyConv2View.display();
     }
 
     private void ResponseC() {
-        C4ResponseC c4ResponseC = new C4ResponseC();
-        c4ResponseC.display();
+        LadyConv3View ladyConv3View = new LadyConv3View();
+        ladyConv3View.display();
     }
 }
 

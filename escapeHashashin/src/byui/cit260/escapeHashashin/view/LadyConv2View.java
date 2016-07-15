@@ -9,9 +9,9 @@ package byui.cit260.escapeHashashin.view;
  *
  * @author carlos
  */
-public class LadyConv1View extends View{
+public class LadyConv2View extends View {
     
-     public LadyConv1View(){
+    public LadyConv2View(){
         
         super("\n -----------------------------"
                 + "\n| Game Menu                  "
@@ -25,7 +25,7 @@ public class LadyConv1View extends View{
             +"\nResponse"
                 + "\n ------------------------------------------------------------"
                 + "\n| Miss Ives looks at you, smiles and says:                   |"
-                + "\n| 'Every body is trying to scape from this place'            |"
+                + "\n| 'Too bad they are always locked down'                      |"
                 + "\n| As she walsk away she bumps into someone dropping a set of |"
                 + "\n| keys on the floor without she even noticing it.            |"
                 + "\n| You pick up the key and only hope one of them is the key   |"
@@ -82,8 +82,4 @@ public class LadyConv1View extends View{
          gameMenuView.display();
     }
     
-    
-    
-    
 }
-
