@@ -14,22 +14,14 @@ public class ShoreView extends View{
      public ShoreView(){
         
         super("\n -----------------------------"
-                + "\n| Game Menu                  "
-            + "\nZ- Display Map"
-            + "\nX- Save Game"
-            + "\nY- Weapons Inventory"
-            + "\nW- Treasure Inventory"
-            + "\nV- Key Inventory "
-            + "\n -----------------------------"
                 + "\n -----------------------------"
-            +"\nLibrary"
                 + "\n| Great! You made it through the maze and outside the walls   |"
                 + "\n| without been cought. Now there is a boat in front of you.   |"
                 + "\n| You need to get to your ship that is waiting for you at the |"
                 + "\n| sea ready to sail.                                          |"
-                + "\n --------------------------------------------------------------------"
-        + "\nGarden Gate"
-                + "\nA - Get in the boat and padle away"
+                + "\n -------------------------------------------------------------"
+        + "\nSHORE"
+                + "\nA - Get in the boat and padle away to the ship"
                 + "\nB - Get in the water and swim to your ship"
                 + "\nQ - Quit"
                 + "\n -----------------------------"
@@ -72,7 +64,7 @@ public class ShoreView extends View{
         System.out.println("\n -----------------------------------------------------"
                          + "\n| You decided to start swiming but the ship was too   |"
                          + "\n| far away from the shore. You have drowned. You were |"
-                         + "\n| so close."
+                         + "\n| so close.                                           |"
                          + "\n -----------------------------------------------------");
     
     }

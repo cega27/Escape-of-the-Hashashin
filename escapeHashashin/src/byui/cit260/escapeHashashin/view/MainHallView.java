@@ -12,16 +12,8 @@ package byui.cit260.escapeHashashin.view;
 public class MainHallView extends View {
     
     public MainHallView() {
-            super("\n -----------------------------"
-                + "\n| Game Menu                  "
-            + "\nZ- Display Map"
-            + "\nX- Save Game"
-            + "\nY- Weapons Inventory"
-            + "\nW- Treasure Inventory"
-            + "\nV- Key Inventory "
-            + "\n -----------------------------"
-                + "\n -----------------------------"
-            + "\n Main Hall"
+            super(
+            "\n Main Hall"
             + "\n -------------------------------------------------------------------------------"
             + "\n| As you walk into the Main hall you realized that there is a big celebration   |"
             + "\n| going on. People see you walking in and politely node at you as to aknowledge |"

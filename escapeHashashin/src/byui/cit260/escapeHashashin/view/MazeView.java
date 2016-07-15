@@ -5,75 +5,82 @@
  */
 package byui.cit260.escapeHashashin.view;
 
-import byui.cit260.escapeHashashin.control.MazeControl;
-import byui.cit260.escapeHashashin.exceptions.MazeControlException;
-
 /**
  *
  * @author carlos
  */
 public class MazeView extends View{
-    
-     private String promptNumber;
-    private String promptUserAnswer;
+ 
     public MazeView() {
       
-        this.console.println("\nWelcome to the Royal Gardens!\n"
+                     super("\n -----------------------------"
+                + "\n| Game Menu                  "
+                + "\nZ- Display Map"
+                + "\nX- Save Game"
+                + "\nY- Weapons Inventory"
+                + "\nW- Treasure Inventory"
+                + "\nV- Key Inventory "
+                + "\n -----------------------------"
+                + "\n -----------------------------"
+                         + "\nWelcome to the Royal Gardens!\n"
                          + "| In front of you there is the Grand Maze believed to be the         |\n"
                          + "| most difficult maze ever created. But don't give up just yet.      |\n"
                          + "| At the entrance of the maze, there is a chest with a map to the    |\n"
-                         + "| maze inside. To get the map you must solve the matematical         |\n"
-                         + "| problem given to you. If you get the right answer you will get the |\n"
+                         + "| maze inside. To get the map you must use a key to open the chest   |\n"
+                         + "| problem given to you. If you use the right key you will get the    |\n"
                          + "| map that will lead you through the maze and outside the walls of   |\n"
                          + "| the castle. Good luck!                                             |\n"
-                         + " -------------------------------------------------------------------- \n");
+                         + " -------------------------------------------------------------------- \n"
+                         + "\nA - Use Miss Ives' keys"
+                         + "\nB - Look Around"
+                         + "\nQ - Quit"
+                         + "\n -----------------------------"
+                         + "\nPlease enter the Letter");
         
-        this.promptNumber
-                = "   ----------------------------------"
-                + "\n| Use a number from 1 to 50        |"
-                + "\n| Please enter your number to be   |"
-                + "\n| multiplied by 10:                |"
-                + "\n ----------------------------------\n";
-
-        this.promptUserAnswer
-                = "\n ----------------------------------------"
-                + "\n| Your number has been multiplied by 10. |"
-                + "\n| Enter the square root of your number   |"
-                + "\n| after it's been multiplied by 10:      |"
-                + "\n ----------------------------------------\n";
         
-        this.displayMessage = this.promptNumber;
-    
-}
-
-    @Override
-    public boolean doAction(String number){
-         //Get their volt
-        double userNumber = Double.parseDouble(number);
         
-        this.displayMessage = this.promptUserAnswer;
-        String getAnswer = this.getInput();
-        
-        double userAnswer;
-        userAnswer = Double.parseDouble(getAnswer);
-        
-
-        
-        try {
-            if (MazeControl.calcMazeMath(userNumber, userAnswer) == "Correct"){
-                return true;
-            }
-            else if (MazeControl.calcMazeMath(userNumber, userAnswer) == "Incorrect") {
-                return false;   
-            }
-        } catch (MazeControlException ex) {
-           this.console.println(ex.getMessage());
-        }  
-       LadyConv1View ladyConv1View = new LadyConv1View();
-       ladyConv1View.display(); 
-       return true;
     }
     
     
+    public boolean doAction(String value) {
+
+        value = value.toUpperCase(); //convert choice to upper case
+
+        switch (value) {
+            case "A": //create and start a new game
+                this.keys();
+                break;
+            case "B":
+                this.rock();
+                break;
+            default:
+                ErrorView.display(this.getClass().getName(), "\nInvalid selection. Try again");
+                break;
+        }
+        return true;
+    
+    
+    
+    
+    
+}
+
+    private void keys() {
+         System.out.println("\n ----------------------------------------------------"
+                         + "\n| Great! After trying different keys, you found the   |"
+                         + "\n| right one! You have the map now and with it getting |"
+                         + "\n| through the maze will be easy.                      |"
+                         + "\n ----------------------------------------------------");
+        
+         ShoreView shoreView = new ShoreView();
+         shoreView.display();
+    }
+
+    private void rock() {
+        System.out.println("\n -----------------------------------------------------"
+                         + "\n| You walked around without any succes in finding the |"
+                         + "\n| key. You only have one option now.                  |"
+                         + "\n ----------------------------------------------------");
+    }
     
 }

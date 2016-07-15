@@ -64,14 +64,25 @@ public class MazeControlView extends View{
         
         try {
             if (MazeControl.calcMazeMath(userNumber, userAnswer) == "Correct"){
+                System.out.println("\n ----------------------------------"
+                         + "\n| Congrats! You entered the right answer!  |"
+                         + "\n| You have the map now and with it getting |"
+                         + "\n| through the maze will be easy            |"
+                         + "\n ------------------------------------------");
+                ShoreView shoreView = new ShoreView();
+                shoreView.display();
+                
                 return true;
             }
             else if (MazeControl.calcMazeMath(userNumber, userAnswer) == "Incorrect") {
+               
                 return false;   
             }
         } catch (MazeControlException ex) {
            this.console.println(ex.getMessage());
         }  
+        
+        
         return true;   
     }
     

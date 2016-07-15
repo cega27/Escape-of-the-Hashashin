@@ -22,7 +22,7 @@ public class GardenView extends View{
             + "\nV- Key Inventory "
             + "\n -----------------------------"
                 + "\n -----------------------------"
-            +"\nLibrary"
+            +"\n"
                 + "\n| A great gate protects the Royal Gardens from any unautorized |"
                 + "\n| visitors. you have a set of keys that hopefully one of them  |"
                 + "\n| is the key to open this great gate.                          |"
@@ -63,8 +63,8 @@ public class GardenView extends View{
 }
 
     private void keys() {
-        MazeView mazeView = new MazeView();
-        mazeView.display();
+        MazeControlView mazeControlView = new MazeControlView();
+        mazeControlView.display();
     }
 
     private void rock() {
